@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-    </list>
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,14 +56,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584868242522</updated>
-      <workItem from="1584868244896" duration="1760000" />
+      <workItem from="1584868244896" duration="1837000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
+      <created>1584881123079</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584881123079</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Initial Commit. Working react/three.js integration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit. Working react/three.js integration." />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="560" y="277" key="#Plugins" timestamp="1584881163883">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1584881122922">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881122922" />
     <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -87,5 +102,13 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
+    <state x="461" y="250" key="SettingsEditor" timestamp="1584881304896">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881304896" />
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1584881298087">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881298087" />
   </component>
 </project>
