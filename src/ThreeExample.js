@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import './App.css';
 
-function App() {
+export function ThreeExample() {
   const attach = useRef();
   const [day, setDay] = useState(0);
 
@@ -35,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+
