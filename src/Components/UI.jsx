@@ -14,6 +14,7 @@ export const UI = ({ day, startDate, maxDays, onChangeTime, onPause }) => {
       <Header>
         2019 Novel Coronavirus COVID-19 (2019-nCoV): Global Cases over time.
       </Header>
+      <Spacer />
       <MainContainer>
         <DateText>{currentDay.toLocaleString()}</DateText>
         <Controls>
@@ -37,8 +38,8 @@ const Container = styled.div`
   align-content: center;
   top: 0;
   z-index: 5;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 `;
 
@@ -48,7 +49,7 @@ const Header = styled.div`
   pointer-events: all;
   background: #00000099;
   width: 100%;
-  height: 5rem;
+  height: 5%;
 `;
 
 const Footer = styled.div`
@@ -57,7 +58,12 @@ const Footer = styled.div`
   pointer-events: all;
   background: #00000099;
   width: 100%;
-  height: 5rem;
+  height: 5%;
+`;
+
+const Spacer = styled.div`
+  width: 100%;
+  height: 60%;
 `;
 
 const MainContainer = styled.div`
@@ -66,13 +72,13 @@ const MainContainer = styled.div`
   align-items: center;
   pointer-events: all;
   width: 100%;
-  margin-top: 50%;
+  background: #00000099;
 `;
 
 const DateText = styled.div`
   color: ${({ theme }) => theme.highlight}DD;
   font-size: 6.5rem;
-  background-blend-mode: screen;
+  padding: 1rem;
   @media (max-width: 960px) {
     font-size: 4.5rem;
   }
@@ -80,6 +86,7 @@ const DateText = styled.div`
 
 const Controls = styled.div`
   width: 80%;
+  padding: 1rem;
 `;
 
 const StyledSlider = styled(Slider)`

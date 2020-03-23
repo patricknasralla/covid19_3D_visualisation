@@ -3,7 +3,8 @@
   font-size: 62.5%;  /* sets 1rem === 10px */
 }
 
-body {
+html, body {
+  height: 100%;
   color: #9da1a4;
   background: #000000;
   margin: 0;
@@ -15,8 +16,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.MuiSlider-root {
-  color: #9da1a4;
 }

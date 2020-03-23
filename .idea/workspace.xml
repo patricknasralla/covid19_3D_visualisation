@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Visualiser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584868242522</updated>
-      <workItem from="1584868244896" duration="29024000" />
+      <workItem from="1584868244896" duration="30517000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584988983075</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated to include extended US data. Current set up to 23/3/20">
+      <created>1584993582216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584993582216</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,17 +133,18 @@
     <MESSAGE value="Loading spinner added" />
     <MESSAGE value="Visualiser now working in React!" />
     <MESSAGE value="UI version 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="UI version 1." />
+    <MESSAGE value="Updated to include extended US data. Current set up to 23/3/20" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to include extended US data. Current set up to 23/3/20" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="277" key="#Plugins" timestamp="1584881163883">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1584988982861">
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1584993582092">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584988982861" />
+    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584993582092" />
     <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -154,10 +165,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584959926463" />
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1584988989499">
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1584993584829">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584988989499" />
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584993584829" />
     <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1584967199917">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
