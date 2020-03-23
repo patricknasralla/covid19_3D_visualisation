@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
 
 export const LoadingSpinner = ({ vCentered, loadingText }) => (
   <Container vCentered={vCentered}>
@@ -9,9 +9,12 @@ export const LoadingSpinner = ({ vCentered, loadingText }) => (
       <div />
       <div />
     </Spinner>
-    {loadingText && <p>{loadingText}</p>}
+    {loadingText.length && <LoadingText loadingItemsList={loadingText} />}
   </Container>
 );
+
+const LoadingText = ({ loadingItemsList }) =>
+  loadingItemsList.map((itemName, index) => <p key={index}>{itemName}</p>);
 
 const Container = styled.div`
   display: flex;
@@ -23,7 +26,7 @@ const Container = styled.div`
   font-size: 1.3rem;
 `;
 
-const Spinner = styled("div")`
+const Spinner = styled('div')`
   display: inline-block;
   position: relative;
   width: 80px;
