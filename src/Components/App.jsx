@@ -3,8 +3,8 @@ import { ThemeProvider } from 'styled-components';
 import { TextureLoader } from 'three';
 
 import { DataParser } from '../utilities/DataParser';
-import { lightTheme, darkTheme } from './Theme';
-import { LoadingSpinner } from './Spinner';
+import { darkTheme } from './Theme';
+import { LoadingOverlay, LoadingSpinner } from './Spinner';
 import { Visualiser } from './Visualiser';
 
 export const App = () => {
@@ -12,7 +12,6 @@ export const App = () => {
     'Getting Case Data',
     'Loading Textures',
   ]);
-  const [theme, setTheme] = useState(darkTheme);
   const [data, setData] = useState(null);
   const [spriteTexture, setSpriteTexture] = useState(null);
   const [globeTexture, setGlobeTexture] = useState(null);
@@ -67,9 +66,11 @@ export const App = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       {loadingItems.length ? (
-        <LoadingSpinner vCentered={true} loadingText={loadingItems} />
+        <LoadingOverlay>
+          <LoadingSpinner vCentered={true} loadingText={loadingItems} />
+        </LoadingOverlay>
       ) : (
         <Visualiser
           data={data}

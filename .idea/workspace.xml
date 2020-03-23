@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/textures/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/textures/cities_8k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/textures/earthbump8k.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/textures/finalTexture.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Visualiser.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/styles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/three/fragmentShader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/three/vertexShader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/three/visualiser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/DataParser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/UI.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Spinner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Spinner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Visualiser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/three/fragmentShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/three/fragmentShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/three/vertexShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/three/vertexShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/three/visualiser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/three/visualiser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/DataParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/DataParser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584868242522</updated>
-      <workItem from="1584868244896" duration="11815000" />
+      <workItem from="1584868244896" duration="28563000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -110,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584959585053</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Visualiser now working in React!">
+      <created>1584966887222</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584966887222</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,17 +126,18 @@
     <MESSAGE value="Initial Commit. Working react/three.js integration." />
     <MESSAGE value="Started README.md" />
     <MESSAGE value="Loading spinner added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Loading spinner added" />
+    <MESSAGE value="Visualiser now working in React!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visualiser now working in React!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="277" key="#Plugins" timestamp="1584881163883">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1584959584883">
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1584966886892">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584959584883" />
+    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584966886892" />
     <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -157,9 +162,9 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881365747" />
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1584956878673">
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1584967199917">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584956878673" />
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584967199917" />
   </component>
 </project>

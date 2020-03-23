@@ -19,24 +19,6 @@ export class DataParser {
     return coordinateList;
   }
 
-  static getConfirmedCases(csvData) {
-    // get column names for data
-    const keys = Object.keys(csvData[0]).slice(4);
-
-    const casesByDay = [];
-    // create arrays for all locations by day
-    keys.forEach(key => {
-      const casesByLocation = [];
-      csvData.forEach(location => {
-        const caseNumber = Number(location[key]);
-        if (caseNumber === 0) casesByLocation.push(0);
-        else casesByLocation.push(Math.log10(caseNumber + 1));
-      });
-      casesByDay.push(casesByLocation);
-    });
-    return casesByDay;
-  }
-
   static getConfirmedCasesAsTextureData(data) {
     // get column names for data
     const keys = Object.keys(data[0]).slice(4);
