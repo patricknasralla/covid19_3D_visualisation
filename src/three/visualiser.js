@@ -142,29 +142,6 @@ export function onWindowResize(camera, container, renderer, uniforms) {
   renderer.setSize(container.clientWidth, container.clientHeight);
 }
 
-// export function render(
-//   totalDays,
-//   playSpeed,
-//   scene,
-//   camera,
-//   renderer,
-//   uniforms,
-// ) {
-//   // currently just stop the animation when the final day is reached
-//   if (day < totalDays) {
-//     if (frame >= 1) {
-//       day += 1;
-//       frame = day < totalDays ? 0 : 1;
-//       if (day < totalDays - 1) {
-//         uniforms.day.value = day;
-//       }
-//     }
-//     uniforms.tween.value = frame;
-//     frame += playSpeed;
-//   }
-//   renderer.render(scene, camera);
-// }
-
 function calculateBoneWeights(vertex, countryVectors) {
   // find closest 4 positions
   const distanceList = [];

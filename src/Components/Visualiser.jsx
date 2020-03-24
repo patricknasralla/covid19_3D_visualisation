@@ -8,7 +8,6 @@ import {
   createGlobeMesh,
   createLights,
   createParticleMesh,
-  onWindowResize,
   parseData,
 } from '../three/visualiser';
 import { LoadingOverlay, LoadingSpinner } from './Spinner';
@@ -16,9 +15,8 @@ import { UI } from './UI';
 
 // three globals (these don't work as state as the render loop is outside react)
 let threeTime = 0;
-let play = true;
+let play = false;
 let playbackSpeed = 0.01;
-let dayTotal;
 
 export const Visualiser = ({
   data,
@@ -31,6 +29,11 @@ export const Visualiser = ({
   const [loading, setLoading] = useState(true);
   const [timeValue, setTimeValue] = useState(0);
   const [maxDays, setMaxDays] = useState(1);
+  const [pause, setPause] = useState(!play);
+
+  useEffect(() => {
+    play = !play;
+  }, [pause]);
 
   useEffect(() => {
     const container = attach.current;
@@ -94,7 +97,7 @@ export const Visualiser = ({
     });
     setMaxDays(totalDays);
     setLoading(false);
-  }, []);
+  }, [data, spriteTexture, globeTexture, globeBumpMap, globeLightMap]);
 
   const render = (totalDays, scene, camera, renderer, uniforms) => {
     if (threeTime < totalDays) {
@@ -112,7 +115,7 @@ export const Visualiser = ({
   };
 
   const handlePlayPause = () => {
-    play = !play;
+    setPause(prevState => !prevState);
   };
 
   return (
@@ -120,10 +123,11 @@ export const Visualiser = ({
       <Container ref={attach} />
       <UI
         day={timeValue}
-        startDate={new Date(2020, 0, 22)}
+        startDate={new Date(2020, 0, 21)}
         maxDays={maxDays}
         onChangeTime={(event, newTime) => handleTimeChange(newTime)}
         onPause={handlePlayPause}
+        paused={pause}
       />
       {loading && (
         <LoadingOverlay>
