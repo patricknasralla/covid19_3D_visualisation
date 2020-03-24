@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="" />
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Components/Information.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Information.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZTfwQ4eMEkiPa3rp0uU42xTm8M" />
@@ -21,6 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/textures" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -29,7 +37,15 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/textures" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -56,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584868242522</updated>
-      <workItem from="1584868244896" duration="1837000" />
+      <workItem from="1584868244896" duration="42326000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -65,27 +81,102 @@
       <option name="project" value="LOCAL" />
       <updated>1584881123079</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started README.md">
+      <created>1584881354308</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584881354308</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Loading spinner added">
+      <created>1584959585053</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584959585053</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Visualiser now working in React!">
+      <created>1584966887222</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584966887222</updated>
+    </task>
+    <task id="LOCAL-00005" summary="UI version 1.">
+      <created>1584988983075</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584988983075</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated to include extended US data. Current set up to 23/3/20">
+      <created>1584993582216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584993582216</updated>
+    </task>
+    <task id="LOCAL-00007" summary="CSS Fix for scrollbars on mobile devices.">
+      <created>1584995269892</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584995269892</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated UI, Updated to most current Data">
+      <created>1585053289075</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585053289075</updated>
+    </task>
+    <task id="LOCAL-00009" summary="version 1.0">
+      <created>1585057865815</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585057865815</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Initial Commit. Working react/three.js integration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit. Working react/three.js integration." />
+    <MESSAGE value="Started README.md" />
+    <MESSAGE value="Loading spinner added" />
+    <MESSAGE value="Visualiser now working in React!" />
+    <MESSAGE value="UI version 1." />
+    <MESSAGE value="Updated to include extended US data. Current set up to 23/3/20" />
+    <MESSAGE value="CSS Fix for scrollbars on mobile devices." />
+    <MESSAGE value="Updated UI, Updated to most current Data" />
+    <MESSAGE value="version 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="277" key="#Plugins" timestamp="1584881163883">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1584881122922">
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585057865098">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881122922" />
+    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585057865098" />
     <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -102,13 +193,21 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
-    <state x="461" y="250" key="SettingsEditor" timestamp="1584881304896">
+    <state x="461" y="250" key="SettingsEditor" timestamp="1584959926463">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881304896" />
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1584881298087">
+    <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584959926463" />
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585057869029">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881298087" />
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585057869029" />
+    <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585053267064">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585053267064" />
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1585054862710">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585054862710" />
   </component>
 </project>
