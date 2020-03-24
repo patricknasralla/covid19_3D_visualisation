@@ -29,7 +29,7 @@ export const Information = ({ onClickOut }) => {
         </p>
         <p>
           Each point is displaced away from the surface by an amount that takes
-          in to account the number of cases of the 4 closest recorded
+          into account the number of cases of the 4 closest recorded
           countries/regions and applies an inverse square falloff. Displacement
           is the Log(10) of the total cases for that point. This means that if
           there are only a few cases in an area, the number of dots and their
@@ -58,8 +58,8 @@ export const Information = ({ onClickOut }) => {
           stop it. But my hope is that this visualisation will help people
           understand how important that "slowing down" is. Just look at how
           quickly the spread has ramped up from the beginning of March. This
-          aims by using real data to give viewers an idea of just how crazy an
-          exponential increase is.
+          aims to give viewers an idea of just how crazy an exponential increase
+          is by using real data.
         </p>
         <p>
           We can all help to curb this spread by adhering to the advice given by
