@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Slider from '@material-ui/core/Slider';
 
 import { AboutIcon, PauseIcon, PlayIcon } from './Icons';
+import { Information } from './Information';
 
 // date constants
 const millisecondsInDay = 86400000;
@@ -18,56 +19,66 @@ export const UI = ({
 }) => {
   currentDay.setTime(startDate.getTime() + day * millisecondsInDay);
 
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setModalOpen(prevState => !prevState);
+    console.log(modalOpen);
+  };
+
   return (
-    <Container>
-      <Header>
-        <Item>
-          Novel Coronavirus COVID-19 (2019-nCoV): Global Cases over time.
-        </Item>
-        <Item>
-          <Button>
-            <AboutIcon />
-          </Button>
-        </Item>
-      </Header>
-      <Spacer />
-      <MainContainer>
-        <DateText>{currentDay.toLocaleString()}</DateText>
-        <Controls>
-          <Button onClick={onPause}>
-            {!paused ? <PlayIcon /> : <PauseIcon />}
-          </Button>
-          <Slider
-            value={day}
-            min={0}
-            max={maxDays}
-            onChange={onChangeTime}
-            color={'secondary'}
-          />
-        </Controls>
-      </MainContainer>
-      <Footer>
-        <span>
-          Visualisation (c)&nbsp;
-          <a
-            href="https://twitter.com/GomiNoSensei"
-            target={'_blank'}
-            rel={'noopener noreferrer'}
-          >
-            Patrick Nasralla
-          </a>
-          &nbsp;2020 | Data taken from&nbsp;
-          <a
-            href="https://github.com/CSSEGISandData/COVID-19"
-            target={'_blank'}
-            rel={'noopener noreferrer'}
-          >
-            Johns Hopkins Coronavirus Resource Center dataset
-          </a>
-          .
-        </span>
-      </Footer>
-    </Container>
+    <>
+      <Container>
+        <Header>
+          <Item>
+            Novel Coronavirus COVID-19 (2019-nCoV): Global Cases over time.
+          </Item>
+          <Item>
+            <Button onClick={handleModalOpen}>
+              <AboutIcon />
+            </Button>
+          </Item>
+        </Header>
+        <Spacer />
+        <MainContainer>
+          <DateText>{currentDay.toLocaleString()}</DateText>
+          <Controls>
+            <Button onClick={onPause}>
+              {!paused ? <PlayIcon /> : <PauseIcon />}
+            </Button>
+            <Slider
+              value={day}
+              min={0}
+              max={maxDays}
+              onChange={onChangeTime}
+              color={'secondary'}
+            />
+          </Controls>
+        </MainContainer>
+        <Footer>
+          <span>
+            Visualisation (c)&nbsp;
+            <a
+              href="https://twitter.com/GomiNoSensei"
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+            >
+              Patrick Nasralla
+            </a>
+            &nbsp;2020 | Data taken from&nbsp;
+            <a
+              href="https://github.com/CSSEGISandData/COVID-19"
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+            >
+              Johns Hopkins COVID-19 Resource Center dataset
+            </a>
+            .
+          </span>
+        </Footer>
+      </Container>
+      {modalOpen && <Information onClickOut={handleModalOpen} />}
+    </>
   );
 };
 

@@ -5,7 +5,7 @@
 
 html, body {
   height: 100%;
-  color: #9da1a4;
+  color: #DADDDF;
   background: #000000;
   margin: 0;
   font-family: 'VT323', monospace;
@@ -16,4 +16,8 @@ html, body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  color: #DADDDF;
 }
