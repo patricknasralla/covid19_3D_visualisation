@@ -18,13 +18,7 @@ let threeTime = 0;
 let play = false;
 let playbackSpeed = 0.01;
 
-export const Visualiser = ({
-  data,
-  spriteTexture,
-  globeTexture,
-  globeBumpMap,
-  globeLightMap,
-}) => {
+export const Visualiser = ({ data, spriteTexture, globeTexture }) => {
   const attach = useRef();
   const [loading, setLoading] = useState(true);
   const [timeValue, setTimeValue] = useState(0);
@@ -53,14 +47,10 @@ export const Visualiser = ({
 
     const scene = new THREE.Scene();
 
+    globeTexture.rotation = 0;
+
     createLights(scene);
-    createGlobeMesh(
-      scene,
-      spriteTexture,
-      globeTexture,
-      globeBumpMap,
-      globeLightMap,
-    );
+    createGlobeMesh(scene, spriteTexture, globeTexture);
     createParticleMesh(scene, locations, uniforms);
 
     const renderer = new THREE.WebGLRenderer();
@@ -97,7 +87,7 @@ export const Visualiser = ({
     });
     setMaxDays(totalDays);
     setLoading(false);
-  }, [data, spriteTexture, globeTexture, globeBumpMap, globeLightMap]);
+  }, [data, spriteTexture, globeTexture]);
 
   const render = (totalDays, scene, camera, renderer, uniforms) => {
     if (threeTime < totalDays) {
