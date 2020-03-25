@@ -15,8 +15,6 @@ export const App = () => {
   const [data, setData] = useState(null);
   const [spriteTexture, setSpriteTexture] = useState(null);
   const [globeTexture, setGlobeTexture] = useState(null);
-  const [globeBumpMap, setGlobeBumpMap] = useState(null);
-  const [globeLightMap, setGlobeLightMap] = useState(null);
 
   // load data from CSV file and Textures into memory.
   useEffect(() => {
@@ -39,25 +37,7 @@ export const App = () => {
     setGlobeTexture(
       new TextureLoader().load('textures/finalTexture.jpg', () => {
         textureCount++;
-        if (textureCount < 4) return;
-        setLoadingItems(prevState =>
-          prevState.filter(item => item !== 'Loading Textures'),
-        );
-      }),
-    );
-    setGlobeBumpMap(
-      new TextureLoader().load('textures/earthbump8k.jpg', () => {
-        textureCount++;
-        if (textureCount < 4) return;
-        setLoadingItems(prevState =>
-          prevState.filter(item => item !== 'Loading Textures'),
-        );
-      }),
-    );
-    setGlobeLightMap(
-      new TextureLoader().load('textures/cities_8k.png', () => {
-        textureCount++;
-        if (textureCount < 4) return;
+        if (textureCount < 2) return;
         setLoadingItems(prevState =>
           prevState.filter(item => item !== 'Loading Textures'),
         );
@@ -76,8 +56,6 @@ export const App = () => {
           data={data}
           spriteTexture={spriteTexture}
           globeTexture={globeTexture}
-          globeBumpMap={globeBumpMap}
-          globeLightMap={globeLightMap}
         />
       )}
     </ThemeProvider>
