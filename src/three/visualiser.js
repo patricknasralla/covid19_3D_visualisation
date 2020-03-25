@@ -103,22 +103,12 @@ export function createParticleMesh(scene, locations, uniforms) {
   scene.add(particleSystem);
 }
 
-export function createGlobeMesh(
-  scene,
-  spriteTexture,
-  globeTexture,
-  globeBumpMap,
-  globeLightMap,
-) {
+export function createGlobeMesh(scene, spriteTexture, globeTexture) {
   const globeGeometry = new THREE.SphereBufferGeometry(0.999, 32, 32);
 
   const globeMaterial = new THREE.MeshStandardMaterial({
     color: 0xffffff,
     map: globeTexture,
-    bumpMap: globeBumpMap,
-    bumpScale: 0.015,
-    emissiveMap: globeLightMap,
-    emissive: 0xffffdd,
   });
 
   const globeMesh = new THREE.Mesh(globeGeometry, globeMaterial);
@@ -162,8 +152,8 @@ function calculateBoneWeights(vertex, countryVectors) {
     // set a cutoff for far away values (to stop values passing through sphere)
     if (position.distance > 0.4) position.weight = 0.0;
     else {
-      // normalise remaining distances to value between 0 and 10
-      const calcDistance = (position.distance / 0.4) * 30;
+      // normalise remaining distances to value between 0 and 50
+      const calcDistance = (position.distance / 0.4) * 50;
       // weight = normalised inverse square of normalised distance
       position.weight = 1 / (calcDistance * calcDistance + 1);
     }
