@@ -10,7 +10,7 @@ import {
 import { darkTheme } from './Theme';
 import { LoadingOverlay, LoadingSpinner } from './Spinner';
 import { Visualiser } from './Visualiser';
-import data from '../data.json';
+import { inflate } from 'pako';
 
 export const App = () => {
   const [loadingItems, setLoadingItems] = useState([
@@ -18,27 +18,42 @@ export const App = () => {
     'Loading Data',
     'Loading DataTexture',
   ]);
+  const [data, setData] = useState(null);
   const [dataTexture, setDataTexture] = useState(null);
   const [spriteTexture, setSpriteTexture] = useState(null);
   const [globeTexture, setGlobeTexture] = useState(null);
 
   // load data from CSV file and Textures into memory.
   useEffect(() => {
-    fetch('textureData.bin')
-      .then(response => response.arrayBuffer())
-      .then(buffer => {
-        const tData = new Uint8Array(buffer);
-        const dataTexture = new DataTexture(
-          tData,
-          data.totalLocations,
-          data.totalDays,
-          RGBAFormat,
-          UnsignedByteType,
+    fetch('data.bin')
+      .then(response => response.text())
+      .then(data => {
+        const parsedData = JSON.parse(
+          inflate(data.toString(), { to: 'string' }),
         );
-        setDataTexture(dataTexture);
+        setData(parsedData);
         setLoadingItems(prevState =>
-          prevState.filter(item => item !== 'Loading DataTexture'),
+          prevState.filter(item => item !== 'Loading Data'),
         );
+        return parsedData;
+      })
+      .then(data => {
+        fetch('textureData.bin')
+          .then(response => response.arrayBuffer())
+          .then(buffer => {
+            const tData = new Uint8Array(buffer);
+            const dataTexture = new DataTexture(
+              tData,
+              data.totalLocations,
+              data.totalDays,
+              RGBAFormat,
+              UnsignedByteType,
+            );
+            setDataTexture(dataTexture);
+            setLoadingItems(prevState =>
+              prevState.filter(item => item !== 'Loading DataTexture'),
+            );
+          });
       });
 
     let textureCount = 0;
