@@ -33,59 +33,36 @@ export function parseData(data) {
   return [locations, caseData, totalDays, totalLocations];
 }
 
-export function createParticleMesh(scene, locations, uniforms) {
-  const placementGeometry = new THREE.IcosahedronGeometry(1, 7);
+export function createParticleMesh(scene, data, uniforms) {
   const geometry = new THREE.BufferGeometry();
 
-  const positions = [];
   const colors = [];
   const sizes = [];
-  const locationIndices = [];
-  const locationWeights = [];
 
   const color = new THREE.Color();
 
   // calculations per vertex in pointSphere
-  for (let i = 0; i < placementGeometry.vertices.length; i++) {
-    // set vertex positions
-    positions.push(
-      placementGeometry.vertices[i].x,
-      placementGeometry.vertices[i].y,
-      placementGeometry.vertices[i].z,
-    );
-
-    // calculate bone weights
-    const positionWeights = calculateBoneWeights(
-      placementGeometry.vertices[i],
-      locations,
-    );
-
-    positionWeights.forEach(position => {
-      locationIndices.push(position.index);
-      locationWeights.push(position.weight);
-    });
-
+  for (let i = 0; i < data.positions.length; i++) {
     // set base colour to 50% grey (for additive shader)
     color.setHSL(0.0, 0.0, 0.5);
     colors.push(color.r, color.g, color.b);
-
     // set size to 1 (likely pointless... but I may want to change things later so...)
     sizes.push(1);
   }
 
   geometry.setAttribute(
     'position',
-    new THREE.Float32BufferAttribute(positions, 3),
+    new THREE.Float32BufferAttribute(data.positions, 3),
   );
   geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
   geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
   geometry.setAttribute(
     'locationIndices',
-    new THREE.Float32BufferAttribute(locationIndices, 4),
+    new THREE.Float32BufferAttribute(data.locationIndices, 4),
   );
   geometry.setAttribute(
     'locationWeights',
-    new THREE.Float32BufferAttribute(locationWeights, 4),
+    new THREE.Float32BufferAttribute(data.locationWeights, 4),
   );
 
   const material = new THREE.ShaderMaterial({
@@ -118,46 +95,4 @@ export function createGlobeMesh(scene, spriteTexture, globeTexture) {
 export function createLights(scene) {
   const ambientLight = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
-}
-
-export function onWindowResize(camera, container, renderer, uniforms) {
-  // set the aspect ratio to match the new browser window aspect ratio
-  camera.aspect = container.clientWidth / container.clientHeight;
-
-  // update the camera's frustum
-  camera.updateProjectionMatrix();
-
-  // update the size of the renderer AND the canvas AND the uniforms!
-  uniforms.containerHeight.value = container.clientHeight;
-  renderer.setSize(container.clientWidth, container.clientHeight);
-}
-
-function calculateBoneWeights(vertex, countryVectors) {
-  // find closest 4 positions
-  const distanceList = [];
-  countryVectors.forEach((position, index) => {
-    // consider using distanceToSquared...
-    const distance = vertex.distanceTo(position);
-    distanceList.push({
-      index,
-      distance,
-    });
-  });
-  distanceList.sort((a, b) => a.distance - b.distance);
-
-  const activePositions = distanceList.slice(0, 4);
-
-  // calculate weights (note, you're gonna want to play with the cutoff...
-  activePositions.forEach(position => {
-    // set a cutoff for far away values (to stop values passing through sphere)
-    if (position.distance > 0.4) position.weight = 0.0;
-    else {
-      // normalise remaining distances to value between 0 and 50
-      const calcDistance = (position.distance / 0.4) * 50;
-      // weight = normalised inverse square of normalised distance
-      position.weight = 1 / (calcDistance * calcDistance + 1);
-    }
-  });
-
-  return activePositions;
 }
