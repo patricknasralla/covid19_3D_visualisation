@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="removed unneeded textures.&#10;updated weighting to make initial cases seem less catastrophic!">
       <change beforePath="$PROJECT_DIR$/public/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +37,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585121578985</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="removed unneeded textures.&#10;updated weighting to make initial cases seem less catastrophic!">
+      <created>1585154159851</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585154159852</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,16 +183,18 @@
     <MESSAGE value="Updated UI, Updated to most current Data" />
     <MESSAGE value="version 1.0" />
     <MESSAGE value="data updated for 25/03/20" />
-    <option name="LAST_COMMIT_MESSAGE" value="data updated for 25/03/20" />
+    <MESSAGE value="removed unneeded textures.&#10;updated weighting to make initial cases seem less catastrophic!" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unneeded textures.&#10;updated weighting to make initial cases seem less catastrophic!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="277" key="#Plugins" timestamp="1584881163883">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585121578872">
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585168809643">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
+    <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
     <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585121578872" />
     <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
       <screen x="0" y="23" width="1920" height="1177" />
@@ -203,13 +212,15 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
-    <state x="461" y="250" key="SettingsEditor" timestamp="1584959926463">
+    <state x="461" y="250" key="SettingsEditor" timestamp="1585166838071">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
+    <state x="461" y="250" key="SettingsEditor/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585166838071" />
     <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584959926463" />
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585121584437">
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585154162658">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585154162658" />
     <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585121584437" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585053267064">
       <screen x="0" y="23" width="1920" height="1177" />

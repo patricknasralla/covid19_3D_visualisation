@@ -33,10 +33,11 @@ export const vertexShader = `
         vec3 pNormal = normalize(position);
 
         // get current data coords
-        vec2 dataCoordX = vec2(locationIndices.x/totalLocations, day/totalDays);
-        vec2 dataCoordY = vec2(locationIndices.y/totalLocations, day/totalDays);
-        vec2 dataCoordZ = vec2(locationIndices.z/totalLocations, day/totalDays);
-        vec2 dataCoordW = vec2(locationIndices.w/totalLocations, day/totalDays);
+        // note +0.5 to center lookup in middle of texture coord (fix for nVidia cards) 
+        vec2 dataCoordX = vec2((locationIndices.x + 0.5)/totalLocations, (day + 0.5)/totalDays);
+        vec2 dataCoordY = vec2((locationIndices.y + 0.5)/totalLocations, (day + 0.5)/totalDays);
+        vec2 dataCoordZ = vec2((locationIndices.z + 0.5)/totalLocations, (day + 0.5)/totalDays);
+        vec2 dataCoordW = vec2((locationIndices.w + 0.5)/totalLocations, (day + 0.5)/totalDays);
 
         // get current dataValues
         float vx = getCasesValueFromTexture(dataCoordX);
@@ -53,10 +54,10 @@ export const vertexShader = `
         currentDisplacement += vw * locationWeights.w;
 
         // get next data coords
-        vec2 dataCoordX2 = vec2(locationIndices.x/totalLocations, (day + 1.)/totalDays);
-        vec2 dataCoordY2 = vec2(locationIndices.y/totalLocations, (day + 1.)/totalDays);
-        vec2 dataCoordZ2 = vec2(locationIndices.z/totalLocations, (day + 1.)/totalDays);
-        vec2 dataCoordW2 = vec2(locationIndices.w/totalLocations, (day + 1.)/totalDays);
+        vec2 dataCoordX2 = vec2((locationIndices.x + 0.5)/totalLocations, (day + 1.5)/totalDays);
+        vec2 dataCoordY2 = vec2((locationIndices.y + 0.5)/totalLocations, (day + 1.5)/totalDays);
+        vec2 dataCoordZ2 = vec2((locationIndices.z + 0.5)/totalLocations, (day + 1.5)/totalDays);
+        vec2 dataCoordW2 = vec2((locationIndices.w + 0.5)/totalLocations, (day + 1.5)/totalDays);
 
         // get current dataValues
         float vx2 = getCasesValueFromTexture(dataCoordX2);
