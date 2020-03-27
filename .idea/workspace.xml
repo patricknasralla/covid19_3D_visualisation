@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/public/data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/public/textureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textures/finalTexture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/textures/finalTexture.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +21,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZTfwQ4eMEkiPa3rp0uU42xTm8M" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/textures" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -43,17 +42,17 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public/textures" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/textures" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -83,6 +82,8 @@
       <updated>1584868242522</updated>
       <workItem from="1584868244896" duration="42326000" />
       <workItem from="1585222508089" duration="11330000" />
+      <workItem from="1585316384359" duration="26000" />
+      <workItem from="1585316425546" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -234,16 +235,24 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
-    <state x="461" y="250" key="SettingsEditor" timestamp="1585166838071">
+    <state x="461" y="250" key="SettingsEditor" timestamp="1585316480552">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="461" y="250" key="SettingsEditor/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585166838071" />
-    <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584959926463" />
+    <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585316480552" />
     <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585231690029">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="347" key="Vcs.Push.Dialog.v2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585154162658" />
     <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585231690029" />
+    <state x="702" y="463" key="cloudConfig.PluginsDialog" timestamp="1585316400734">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="702" y="463" key="cloudConfig.PluginsDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585316400734" />
+    <state x="723" y="463" key="cloudConfig.SelfSettingsDialog" timestamp="1585316446898">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="723" y="463" key="cloudConfig.SelfSettingsDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585316446898" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585053267064">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
