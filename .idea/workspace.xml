@@ -4,8 +4,6 @@
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/public/data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/textureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/public/textureData.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/textures/finalTexture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/textures/finalTexture.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +82,7 @@
       <workItem from="1585222508089" duration="11330000" />
       <workItem from="1585316384359" duration="26000" />
       <workItem from="1585316425546" duration="728000" />
+      <workItem from="1585321754550" duration="2226000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -214,11 +213,11 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585232664701" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585231681172">
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585328992289">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
-    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585231681172" />
+    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585328992289" />
     <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -240,11 +239,11 @@
     </state>
     <state x="461" y="250" key="SettingsEditor/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585166838071" />
     <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585316480552" />
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585231690029">
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585318955086">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="347" key="Vcs.Push.Dialog.v2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585154162658" />
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585231690029" />
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585318955086" />
     <state x="702" y="463" key="cloudConfig.PluginsDialog" timestamp="1585316400734">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
