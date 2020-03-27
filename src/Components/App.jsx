@@ -1,34 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { TextureLoader } from 'three';
+import {
+  DataTexture,
+  RGBAFormat,
+  TextureLoader,
+  UnsignedByteType,
+} from 'three';
 
-import { DataParser } from '../utilities/DataParser';
 import { darkTheme } from './Theme';
 import { LoadingOverlay, LoadingSpinner } from './Spinner';
 import { Visualiser } from './Visualiser';
+import { inflate } from 'pako';
 
 export const App = () => {
   const [loadingItems, setLoadingItems] = useState([
-    'Getting Case Data',
     'Loading Textures',
+    'Loading Data',
+    'Loading DataTexture',
   ]);
   const [data, setData] = useState(null);
+  const [dataTexture, setDataTexture] = useState(null);
   const [spriteTexture, setSpriteTexture] = useState(null);
   const [globeTexture, setGlobeTexture] = useState(null);
 
   // load data from CSV file and Textures into memory.
   useEffect(() => {
-    DataParser.getDataFromCSV('data.csv').then(data => {
-      setData(data);
-      setLoadingItems(prevState =>
-        prevState.filter(item => item !== 'Getting Case Data'),
-      );
-    });
+    fetch('data.bin')
+      .then(response => response.text())
+      .then(data => {
+        const parsedData = JSON.parse(
+          inflate(data.toString(), { to: 'string' }),
+        );
+        setData(parsedData);
+        setLoadingItems(prevState =>
+          prevState.filter(item => item !== 'Loading Data'),
+        );
+        return parsedData;
+      })
+      .then(data => {
+        fetch('textureData.bin')
+          .then(response => response.arrayBuffer())
+          .then(buffer => {
+            const tData = new Uint8Array(buffer);
+            const dataTexture = new DataTexture(
+              tData,
+              data.totalLocations,
+              data.totalDays,
+              RGBAFormat,
+              UnsignedByteType,
+            );
+            setDataTexture(dataTexture);
+            setLoadingItems(prevState =>
+              prevState.filter(item => item !== 'Loading DataTexture'),
+            );
+          });
+      });
+
     let textureCount = 0;
     setSpriteTexture(
       new TextureLoader().load('textures/circle.png', () => {
         textureCount++;
-        if (textureCount < 4) return;
+        if (textureCount < 2) return;
         setLoadingItems(prevState =>
           prevState.filter(item => item !== 'Loading Textures'),
         );
@@ -54,6 +86,7 @@ export const App = () => {
       ) : (
         <Visualiser
           data={data}
+          dataTexture={dataTexture}
           spriteTexture={spriteTexture}
           globeTexture={globeTexture}
         />
