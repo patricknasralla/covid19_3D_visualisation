@@ -1,0 +1,30 @@
+{
+  "name": "covid19_visualiser_data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "nodemonConfig": {
+    "ignore": [
+      "output/*"
+    ]
+  },
+  "scripts": {
+    "start": "babel-node ParseCaseData.js",
+    "test": "nodemon --exec babel-node zlibTest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.2",
+    "pako": "^1.0.11",
+    "three": "^0.115.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "nodemon": "^2.0.2"
+  }
+}

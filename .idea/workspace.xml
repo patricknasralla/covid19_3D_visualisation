@@ -2,8 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/datatool/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/ParseCaseData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/rawData/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/src/DataUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/testfile.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/zlibTest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/visualisation/public/data.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/visualisation/public/textureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/public/data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/output/data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/About.svg" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/svg/About.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/Pause.svg" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/svg/Pause.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/Play.svg" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/svg/Play.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/output/textureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textures/circle.png" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/textures/circle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textures/cities_8k.png" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/textures/cities_8k.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textures/earthbump8k.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/textures/earthbump8k.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/textures/finalTexture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/textures/finalTexture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Icons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Icons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Information.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Information.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Spinner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Spinner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/UI.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Visualiser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreeExample.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/three/fragmentShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/three/fragmentShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/three/vertexShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/three/vertexShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/three/visualiser.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/three/visualiser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/DataParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/utilities/DataParser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +77,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -43,22 +93,23 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/textures" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/visualisation" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.Start Visualiser (Dev)">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="npm start" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="Parse Data" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/datatool/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -67,6 +118,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Start Visualiser (Dev)" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/visualisation/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.Start Visualiser (Dev)" />
+      <item itemvalue="npm.Parse Data" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -83,6 +149,7 @@
       <workItem from="1585316384359" duration="26000" />
       <workItem from="1585316425546" duration="728000" />
       <workItem from="1585321754550" duration="2226000" />
+      <workItem from="1585329898609" duration="2596000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -190,6 +257,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit. Working react/three.js integration." />
     <MESSAGE value="Started README.md" />
     <MESSAGE value="Loading spinner added" />
@@ -209,6 +277,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
+    <state x="424" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585330387674">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="424" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585330387674" />
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585232664701">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -218,22 +290,22 @@
     </state>
     <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
     <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585328992289" />
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1584877823278">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585330020243">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823278" />
-    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1584877823277">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585330020243" />
+    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585330020242">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
-    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1584877823277">
+    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585330020242" />
+    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585330020242">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
-    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1584877823277">
+    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585330020242" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585330020243">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584877823277" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585330020243" />
     <state x="461" y="250" key="SettingsEditor" timestamp="1585316480552">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
