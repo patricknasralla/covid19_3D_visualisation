@@ -49,11 +49,15 @@ fs.createReadStream("./rawData/data.csv")
     };
     const output = deflate(JSON.stringify(parsedData), { to: "string" });
 
-    fs.writeFile("./output/textureData.bin", textureData, err => {
-      if (err) throw err;
-      console.log("textureData successfully parsed!");
-    });
-    fs.writeFile("./output/data.bin", output, err => {
+    fs.writeFile(
+      "../visualisation/public/data/textureData.bin",
+      textureData,
+      err => {
+        if (err) throw err;
+        console.log("textureData successfully parsed!");
+      }
+    );
+    fs.writeFile("../visualisation/public/data/data.bin", output, err => {
       if (err) throw err;
       console.log("Data successfully parsed!");
     });
