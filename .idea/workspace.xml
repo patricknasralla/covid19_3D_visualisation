@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/visualisation/public/data/textureData.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datatool/ParseCaseData.js" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/ParseCaseData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datatool/output/data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datatool/output/textureData.bin" beforeDir="false" />
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="1.1.0&#10;Initial step of transferring calculations away from the client. working but saved json is 22mb large. &#10;Saving progress before next push">
       <change beforePath="$PROJECT_DIR$/datatool/rawData/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualisation/public/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualisation/public/textureData.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/textureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/textureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/Theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/serviceWorker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +48,19 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/textures" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/visualisation/public/data" />
       <recent name="$PROJECT_DIR$/visualisation" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/textures" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.Parse Data">
+  <component name="RunManager" selected="npm.Start Visualiser (Dev)">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -257,22 +254,22 @@
     </state>
     <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
     <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585333559711" />
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585388464848">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585468330153">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585388464848" />
-    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585388464848">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585468330153" />
+    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585468330152">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585388464848" />
-    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585388464848">
+    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585468330152" />
+    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585468330151">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585388464848" />
-    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585388464848">
+    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585468330151" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585468330153">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585388464848" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585468330153" />
     <state x="461" y="250" key="SettingsEditor" timestamp="1585316480552">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
