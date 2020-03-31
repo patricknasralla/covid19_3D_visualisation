@@ -25,7 +25,7 @@ export const App = () => {
 
   // load data from CSV file and Textures into memory.
   useEffect(() => {
-    fetch('data/data.bin')
+    fetch('data/staticData.bin')
       .then(response => response.text())
       .then(data => {
         const parsedData = JSON.parse(
@@ -38,7 +38,7 @@ export const App = () => {
         return parsedData;
       })
       .then(data => {
-        fetch('data/textureData.bin')
+        fetch('data/confirmedTextureData.bin')
           .then(response => response.arrayBuffer())
           .then(buffer => {
             const tData = new Uint8Array(buffer);

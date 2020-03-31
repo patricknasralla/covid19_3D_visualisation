@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "babel-node ParseCaseData.js",
-    "test": "nodemon --exec babel-node zlibTest.js"
+    "test": "nodemon --exec babel-node experiments.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,8 @@
   "dependencies": {
     "csv-parser": "^2.3.2",
     "pako": "^1.0.11",
-    "three": "^0.115.0"
+    "three": "^0.115.0",
+    "neat-csv": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
