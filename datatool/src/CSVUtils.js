@@ -10,7 +10,6 @@ export async function parseCSV(path) {
         // add Lat and Long coords for the US states because they kindly didn't put those in for some reason...
         if (data.Admin2 === "Unassigned") {
           addStateLatLong(data);
-          console.log(`${data.Province_State} ${data.Lat} : ${data.Long_}`);
         }
         // remove currently unneeded fields
         if (data.UID) {
@@ -52,6 +51,14 @@ export function normalizeKeys(obj) {
     }
     if (key === "Country/Region") {
       let newPair = { Country_Region: obj["Country/Region"] };
+      normalizedObject = { ...normalizedObject, ...newPair };
+      return;
+    }
+    // sort out date issues
+    if (key.match(/^\d{1,2}\/\d{1,2}\/\d{2}$/)) {
+      // add in the thousands
+      const newKey = key.slice(0, -2) + "20" + key.slice(-2);
+      let newPair = { [newKey]: obj[key] };
       normalizedObject = { ...normalizedObject, ...newPair };
       return;
     }
@@ -274,13 +281,14 @@ export function addStateLatLong(obj) {
 export function removeUSCountryValues(data) {
   data.forEach(entry => {
     if (!entry.Province_State && entry.Country_Region === "US") {
-      console.log(`US country data found, setting all values to 0...`);
+      console.log(
+        `US county data found, setting all values to 0 for US global data to avoid data doubling...`
+      );
       const keys = Object.keys(entry).slice(4);
 
       keys.forEach(key => {
         entry[key] = 0;
       });
-      console.log(entry);
     }
   });
 }

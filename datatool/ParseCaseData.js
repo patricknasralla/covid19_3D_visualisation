@@ -27,6 +27,10 @@ async function exportDataForApplication() {
   removeUSCountryValues(confirmedRaw);
   removeUSCountryValues(deathsRaw);
 
+  console.log(
+    "Performing vector and weight calculations. This can take up to 3 mins with large data sets, please be patient!"
+  );
+
   const locationPositions = DataUtils.getPositionVectorsFromData(confirmedRaw);
   const [positions, locationIndices, locationWeights] = DataUtils.getVertexData(
     locationPositions
