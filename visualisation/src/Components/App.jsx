@@ -56,7 +56,7 @@ export const App = () => {
           })
           .then(() => {
             textureCount++;
-            if (textureCount >= 3) {
+            if (textureCount >= 2) {
               setLoadingItems(prevState =>
                 prevState.filter(item => item !== 'Loading DataTextures'),
               );
@@ -77,33 +77,34 @@ export const App = () => {
           })
           .then(() => {
             textureCount++;
-            if (textureCount >= 3) {
+            if (textureCount >= 2) {
               setLoadingItems(prevState =>
                 prevState.filter(item => item !== 'Loading DataTextures'),
               );
             }
           });
-        fetch('data/recoveredTextureData.bin')
-          .then(response => response.arrayBuffer())
-          .then(buffer => {
-            const tData = new Uint8Array(buffer);
-            const dataTexture = new DataTexture(
-              tData,
-              data.totalLocations,
-              data.totalDays,
-              RGBAFormat,
-              UnsignedByteType,
-            );
-            setRecoveredDataTexture(dataTexture);
-          })
-          .then(() => {
-            textureCount++;
-            if (textureCount >= 3) {
-              setLoadingItems(prevState =>
-                prevState.filter(item => item !== 'Loading DataTextures'),
-              );
-            }
-          });
+        // remove until correct recovered data available...
+        // fetch('data/recoveredTextureData.bin')
+        //   .then(response => response.arrayBuffer())
+        //   .then(buffer => {
+        //     const tData = new Uint8Array(buffer);
+        //     const dataTexture = new DataTexture(
+        //       tData,
+        //       data.totalLocations,
+        //       data.totalDays,
+        //       RGBAFormat,
+        //       UnsignedByteType,
+        //     );
+        //     setRecoveredDataTexture(dataTexture);
+        //   })
+        //   .then(() => {
+        //     textureCount++;
+        //     if (textureCount >= 3) {
+        //       setLoadingItems(prevState =>
+        //         prevState.filter(item => item !== 'Loading DataTextures'),
+        //       );
+        //     }
+        //   });
       });
 
     let textureCount = 0;
@@ -136,7 +137,7 @@ export const App = () => {
       ) : (
         <Visualiser
           data={data}
-          dataTextures={deathsDataTexture}
+          dataTextures={[confirmedDataTexture, deathsDataTexture]}
           spriteTexture={spriteTexture}
           globeTexture={globeTexture}
         />

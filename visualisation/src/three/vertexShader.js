@@ -3,10 +3,13 @@ export const vertexShader = `
       uniform float tween;
       uniform float pixelRatio;
       uniform float containerHeight;
-      uniform sampler2D caseData;
+      uniform sampler2D confirmedData;
+      uniform sampler2D deathsData;
+//      uniform sampler2D recoveredData;
       uniform float day;
       uniform float totalDays;
       uniform float totalLocations;
+      uniform int dataFrom;
 
       attribute float size;
       attribute vec4 locationIndices;
@@ -18,13 +21,30 @@ export const vertexShader = `
         // let's try and change the color based on the amplitude received for now...
         if ( displacement < 0.1 ) {
           vColor = vec3(0.0, 0.0, 0.0);
-        } else {
-          vColor = vec3(0.5 + (displacement * 0.5), 0.5 - (displacement * 0.5), 0.5 - (displacement * 0.5));
+        } else { 
+            if (dataFrom == 0) {
+                vColor = vec3(0.5 + (displacement * 0.5), 0.5 - (displacement * 0.5), 0.5 - (displacement * 0.5));
+            } 
+//            else if (dataFrom == 1) {
+//                vColor = vec3(0.5 + (displacement * 0.5), 0.5 - (displacement * 0.5), 0.5 + (displacement * 0.5));
+//            }
+            else { 
+                vColor = vec3(0.5 + (displacement * 0.5), 0.5 - (displacement * 0.5), 0.5 + (displacement * 0.5));
+            }
         }
       }
 
       float getCasesValueFromTexture(vec2 coords) {
-        vec4 value = texture2D(caseData, coords);
+          vec4 value;
+          if (dataFrom == 0) {
+              value = texture2D(confirmedData, coords);
+          }
+//          else if (dataFrom == 1) {
+//              value = texture2D(deathsData, coords);
+//          }
+          else {
+              value = texture2D(deathsData, coords);
+          }
         float combined = (value.w * 256. + value.z * 256. * 256. + value.y * 256. * 256. * 256. + value.x * 256. * 256. * 256. * 256.);
         return combined / 100000000.;
       }

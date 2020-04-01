@@ -1,6 +1,11 @@
 import fs from "fs";
 import { deflate } from "pako";
-import { parseCSV, removeUSCountryValues } from "./src/CSVUtils";
+import {
+  parseCSV,
+  removeUSCountryValues,
+  createPlaceholderData,
+  aggregateUSDataToState
+} from "./src/CSVUtils";
 import { DataUtils } from "./src/DataUtils";
 
 async function exportDataForApplication() {
@@ -8,20 +13,28 @@ async function exportDataForApplication() {
   const confirmedGlobalRaw = await parseCSV(
     "./rawData/time_series_covid19_confirmed_global.csv"
   );
-  const confirmedUSRaw = await parseCSV(
-    "./rawData/time_series_covid19_confirmed_US.csv"
+  const confirmedUSRaw = aggregateUSDataToState(
+    await parseCSV("./rawData/time_series_covid19_confirmed_US.csv")
   );
   const confirmedRaw = confirmedGlobalRaw.concat(confirmedUSRaw);
   const deathsGlobalRaw = await parseCSV(
     "./rawData/time_series_covid19_deaths_global.csv"
   );
-  const deathsUSRaw = await parseCSV(
-    "./rawData/time_series_covid19_deaths_US.csv"
+  const deathsUSRaw = aggregateUSDataToState(
+    await parseCSV("./rawData/time_series_covid19_deaths_US.csv")
   );
   const deathsRaw = deathsGlobalRaw.concat(deathsUSRaw);
-  const recoveredRaw = await parseCSV(
-    "./rawData/time_series_covid19_recovered_global.csv"
-  );
+
+  // TODO: Add recovered data when available.
+  // const recoveredGlobalRaw = await parseCSV(
+  //   "./rawData/time_series_covid19_recovered_global.csv"
+  // );
+  //
+  // const recoveredPlaceholder = await parseCSV(
+  //   "./rawData/time_series_covid19_confirmed_US.csv"
+  // );
+  // createPlaceholderData(recoveredPlaceholder);
+  // const recoveredRaw = recoveredGlobalRaw.concat(recoveredPlaceholder);
 
   // remove US case/death values as State/County level data available (but keep the entry for data without)
   removeUSCountryValues(confirmedRaw);
@@ -42,9 +55,7 @@ async function exportDataForApplication() {
     totalLocations
   ] = DataUtils.parseDataToTextureData(confirmedRaw);
   const [deathsTextureData, ,] = DataUtils.parseDataToTextureData(deathsRaw);
-  const [recoveredTextureData, ,] = DataUtils.parseDataToTextureData(
-    recoveredRaw
-  );
+  // const [recoveredTextureData, ,] = DataUtils.parseDataToTextureData(recoveredRaw)
 
   const staticData = {
     totalDays,
@@ -82,14 +93,15 @@ async function exportDataForApplication() {
       console.log("Deaths texture data successfully parsed!");
     }
   );
-  fs.writeFile(
-    "../visualisation/public/data/recoveredTextureData.bin",
-    recoveredTextureData,
-    err => {
-      if (err) throw err;
-      console.log("Recovered cases texture data successfully parsed!");
-    }
-  );
+  // Todo: Add recovered data when available
+  // fs.writeFile(
+  //   "../visualisation/public/data/recoveredTextureData.bin",
+  //   recoveredTextureData,
+  //   err => {
+  //     if (err) throw err;
+  //     console.log("Recovered cases texture data successfully parsed!");
+  //   }
+  // );
 }
 
 exportDataForApplication();
