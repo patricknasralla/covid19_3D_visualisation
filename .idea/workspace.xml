@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/datatool/rawData/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/data.csv" afterDir="false" />
-    </list>
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="recovered_and_us_data" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.3.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/textures" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,20 +42,31 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/visualisation/public/data" />
-      <recent name="$PROJECT_DIR$/visualisation" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/textures" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/datatool/rawData" />
+      <recent name="$PROJECT_DIR$/visualisation/public/data" />
+      <recent name="$PROJECT_DIR$/visualisation" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Start Visualiser (Dev)">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="Data Test" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/datatool/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="Parse Data" type="js.build_tools.npm">
@@ -83,6 +93,7 @@
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="npm.Start Visualiser (Dev)" />
       <item itemvalue="npm.Parse Data" />
+      <item itemvalue="npm.Data Test" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -101,6 +112,8 @@
       <workItem from="1585316425546" duration="728000" />
       <workItem from="1585321754550" duration="2226000" />
       <workItem from="1585329898609" duration="3533000" />
+      <workItem from="1585637852818" duration="22317000" />
+      <workItem from="1585728159720" duration="20936000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -207,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585554585942</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="1.4.3 Updated for 30/03/20">
+      <created>1585637943984</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585637943984</updated>
+    </task>
+    <task id="LOCAL-00017" summary="1.5.1&#10;Working US state and county data integration. &#10;Stable roll back point prior to adding multiple data textures to visualiser and shader.">
+      <created>1585735046092</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585735046092</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,52 +272,58 @@
     <MESSAGE value="1.4.0&#10;Converted to monorepo" />
     <MESSAGE value="1.4.1 Updated for 28/03/20" />
     <MESSAGE value="1.4.2 Updated for 29/03/20" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.4.2 Updated for 29/03/20" />
+    <MESSAGE value="1.4.3 Updated for 30/03/20" />
+    <MESSAGE value="1.5.1&#10;Working US state and county data integration. &#10;Stable roll back point prior to adding multiple data textures to visualiser and shader." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.5.1&#10;Working US state and county data integration. &#10;Stable roll back point prior to adding multiple data textures to visualiser and shader." />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="277" key="#Plugins" timestamp="1584881163883">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="277" key="#Plugins/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1584881163883" />
-    <state x="424" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585330387674">
+    <state x="424" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585656629424">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="424" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585330387674" />
+    <state x="424" y="273" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585656629424" />
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585232664701">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585232664701" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585554584848">
+    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585735043327">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
-    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585554584848" />
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585724235758">
+    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585735043327" />
+    <state width="1897" height="313" key="GridCell.Tab.0.bottom" timestamp="1585752964889">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585724235758" />
-    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585724235757">
+    <state width="1897" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964889" />
+    <state width="1897" height="313" key="GridCell.Tab.0.center" timestamp="1585752964887">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585724235757" />
-    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585724235757">
+    <state width="1897" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964887" />
+    <state width="1897" height="313" key="GridCell.Tab.0.left" timestamp="1585752964886">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585724235757" />
-    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585724235758">
+    <state width="1897" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964886" />
+    <state width="1897" height="313" key="GridCell.Tab.0.right" timestamp="1585752964888">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585724235758" />
+    <state width="1897" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964888" />
+    <state x="548" y="355" key="IDE.errors.dialog" timestamp="1585744776516">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="548" y="355" key="IDE.errors.dialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585744776516" />
     <state x="461" y="250" key="SettingsEditor" timestamp="1585316480552">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="461" y="250" key="SettingsEditor/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585166838071" />
     <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585316480552" />
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585554588038">
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585637951360">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="560" y="347" key="Vcs.Push.Dialog.v2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585154162658" />
-    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585554588038" />
+    <state x="560" y="347" key="Vcs.Push.Dialog.v2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585637951360" />
     <state x="702" y="463" key="cloudConfig.PluginsDialog" timestamp="1585316400734">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -303,9 +336,17 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585053267064" />
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1585054862710">
+    <state x="100" y="125" width="1720" height="977" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1585737341031">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585054862710" />
+    <state x="100" y="125" width="1720" height="977" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585737341031" />
+    <state x="646" y="397" key="git4idea.merge.GitMergeDialog" timestamp="1585752744211">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="646" y="397" key="git4idea.merge.GitMergeDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752744211" />
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1585749478310">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585749478310" />
   </component>
 </project>

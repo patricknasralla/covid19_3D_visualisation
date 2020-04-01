@@ -38,10 +38,18 @@ export class DataUtils {
     const buffer = new ArrayBuffer(4);
     const view = new DataView(buffer);
 
+    // save the previous key's name just in case there are missing records
+    let prevKey = null;
+
     // populate textureData
     keys.forEach((key, i) => {
       data.forEach((location, j) => {
-        const caseNumber = Number(location[key]);
+        let caseNumber;
+        if (location[key] === undefined && prevKey) {
+          caseNumber = Number(location[prevKey]);
+        } else {
+          caseNumber = Number(location[key]);
+        }
         let logFloatValue;
         let highPIntValue;
         if (caseNumber !== 0) {
@@ -56,6 +64,7 @@ export class DataUtils {
         textureData[stride + 3] = highPIntValue === 0 ? 0 : view.getUint8(2);
         textureData[stride + 4] = highPIntValue === 0 ? 0 : view.getUint8(3);
       });
+      prevKey = key;
     });
 
     return [textureData, totalDays, totalLocations];
@@ -118,8 +127,9 @@ export class DataUtils {
       return activePositions;
     }
 
-    console.log(placementGeometry.vertices.length * 3);
-    console.log(positions.length);
+    console.log(`Total vertices: ${placementGeometry.vertices.length}`);
+    console.log(`Total vertices after culling: ${positions.length / 3}`);
+    console.log(`Total weights calculated: ${locationWeights.length}`);
 
     return [positions, locationIndices, locationWeights];
   }

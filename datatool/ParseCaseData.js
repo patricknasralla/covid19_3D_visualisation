@@ -1,64 +1,107 @@
-/*
- *   Data Parser for COVID-19 visualiser
- *
- *   - turns csv into usable object.
- *   - calculates global locations of dataPoints
- *   - returns {
- *     totalDays: number,
- *     totalLocations: number,
- *     locationIndices: number[],
- *     locationWeights: number[],
- *     vertexPositions: Vector3[],
- *     textureData: Uint8Array,
- *   }
- * */
-
 import fs from "fs";
-import { inflate, deflate } from "pako";
-import csvParser from "csv-parser";
+import { deflate } from "pako";
+import {
+  parseCSV,
+  removeUSCountryValues,
+  createPlaceholderData,
+  aggregateUSDataToState
+} from "./src/CSVUtils";
 import { DataUtils } from "./src/DataUtils";
 
-const rawData = [];
-let parsedData = {};
+async function exportDataForApplication() {
+  // read csv files and concat Global and US data (always do it in that order so that indices are correct for non-us sets)
+  const confirmedGlobalRaw = await parseCSV(
+    "./rawData/time_series_covid19_confirmed_global.csv"
+  );
+  const confirmedUSRaw = aggregateUSDataToState(
+    await parseCSV("./rawData/time_series_covid19_confirmed_US.csv")
+  );
+  const confirmedRaw = confirmedGlobalRaw.concat(confirmedUSRaw);
+  const deathsGlobalRaw = await parseCSV(
+    "./rawData/time_series_covid19_deaths_global.csv"
+  );
+  const deathsUSRaw = aggregateUSDataToState(
+    await parseCSV("./rawData/time_series_covid19_deaths_US.csv")
+  );
+  const deathsRaw = deathsGlobalRaw.concat(deathsUSRaw);
 
-fs.createReadStream("./rawData/data.csv")
-  .pipe(csvParser())
-  .on("data", data => {
-    rawData.push(data);
-  })
-  .on("end", () => {
-    // do all the things here
-    const locationPositions = DataUtils.getPositionVectorsFromData(rawData);
-    const [
-      textureData,
-      totalDays,
-      totalLocations
-    ] = DataUtils.parseDataToTextureData(rawData);
-    const [
-      positions,
-      locationIndices,
-      locationWeights
-    ] = DataUtils.getVertexData(locationPositions);
+  // TODO: Add recovered data when available.
+  // const recoveredGlobalRaw = await parseCSV(
+  //   "./rawData/time_series_covid19_recovered_global.csv"
+  // );
+  //
+  // const recoveredPlaceholder = await parseCSV(
+  //   "./rawData/time_series_covid19_confirmed_US.csv"
+  // );
+  // createPlaceholderData(recoveredPlaceholder);
+  // const recoveredRaw = recoveredGlobalRaw.concat(recoveredPlaceholder);
 
-    parsedData = {
-      totalDays,
-      totalLocations,
-      positions,
-      locationIndices,
-      locationWeights
-    };
-    const output = deflate(JSON.stringify(parsedData), { to: "string" });
+  // remove US case/death values as State/County level data available (but keep the entry for data without)
+  removeUSCountryValues(confirmedRaw);
+  removeUSCountryValues(deathsRaw);
 
-    fs.writeFile(
-      "../visualisation/public/data/textureData.bin",
-      textureData,
-      err => {
-        if (err) throw err;
-        console.log("textureData successfully parsed!");
-      }
-    );
-    fs.writeFile("../visualisation/public/data/data.bin", output, err => {
+  console.log(
+    "Performing vector and weight calculations. This can take up to 3 mins with large data sets, please be patient!"
+  );
+
+  const locationPositions = DataUtils.getPositionVectorsFromData(confirmedRaw);
+  const [positions, locationIndices, locationWeights] = DataUtils.getVertexData(
+    locationPositions
+  );
+
+  const [
+    confirmedTextureData,
+    totalDays,
+    totalLocations
+  ] = DataUtils.parseDataToTextureData(confirmedRaw);
+  const [deathsTextureData, ,] = DataUtils.parseDataToTextureData(deathsRaw);
+  // const [recoveredTextureData, ,] = DataUtils.parseDataToTextureData(recoveredRaw)
+
+  const staticData = {
+    totalDays,
+    totalLocations,
+    positions,
+    locationIndices,
+    locationWeights
+  };
+  const staticOutput = deflate(JSON.stringify(staticData), { to: "string" });
+
+  // output compressed static data to file
+  fs.writeFile(
+    "../visualisation/public/data/staticData.bin",
+    staticOutput,
+    err => {
       if (err) throw err;
-      console.log("Data successfully parsed!");
-    });
-  });
+      console.log("Static data successfully parsed!");
+    }
+  );
+
+  // output texture data
+  fs.writeFile(
+    "../visualisation/public/data/confirmedTextureData.bin",
+    confirmedTextureData,
+    err => {
+      if (err) throw err;
+      console.log("Confirmed cases texture data successfully parsed!");
+    }
+  );
+  fs.writeFile(
+    "../visualisation/public/data/deathsTextureData.bin",
+    deathsTextureData,
+    err => {
+      if (err) throw err;
+      console.log("Deaths texture data successfully parsed!");
+    }
+  );
+  // Todo: Add recovered data when available
+  // fs.writeFile(
+  //   "../visualisation/public/data/recoveredTextureData.bin",
+  //   recoveredTextureData,
+  //   err => {
+  //     if (err) throw err;
+  //     console.log("Recovered cases texture data successfully parsed!");
+  //   }
+  // );
+}
+
+exportDataForApplication();
