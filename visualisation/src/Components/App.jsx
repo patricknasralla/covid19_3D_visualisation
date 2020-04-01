@@ -16,16 +16,18 @@ export const App = () => {
   const [loadingItems, setLoadingItems] = useState([
     'Loading Textures',
     'Loading Data',
-    'Loading DataTexture',
+    'Loading DataTextures',
   ]);
   const [data, setData] = useState(null);
-  const [dataTexture, setDataTexture] = useState(null);
+  const [confirmedDataTexture, setConfirmedDataTexture] = useState(null);
+  const [deathsDataTexture, setDeathsDataTexture] = useState(null);
+  const [recoveredDataTexture, setRecoveredDataTexture] = useState(null);
   const [spriteTexture, setSpriteTexture] = useState(null);
   const [globeTexture, setGlobeTexture] = useState(null);
 
   // load data from CSV file and Textures into memory.
   useEffect(() => {
-    fetch('data/data.bin')
+    fetch('data/staticData.bin')
       .then(response => response.text())
       .then(data => {
         const parsedData = JSON.parse(
@@ -38,7 +40,8 @@ export const App = () => {
         return parsedData;
       })
       .then(data => {
-        fetch('data/textureData.bin')
+        let textureCount = 0;
+        fetch('data/confirmedTextureData.bin')
           .then(response => response.arrayBuffer())
           .then(buffer => {
             const tData = new Uint8Array(buffer);
@@ -49,11 +52,59 @@ export const App = () => {
               RGBAFormat,
               UnsignedByteType,
             );
-            setDataTexture(dataTexture);
-            setLoadingItems(prevState =>
-              prevState.filter(item => item !== 'Loading DataTexture'),
-            );
+            setConfirmedDataTexture(dataTexture);
+          })
+          .then(() => {
+            textureCount++;
+            if (textureCount >= 2) {
+              setLoadingItems(prevState =>
+                prevState.filter(item => item !== 'Loading DataTextures'),
+              );
+            }
           });
+        fetch('data/deathsTextureData.bin')
+          .then(response => response.arrayBuffer())
+          .then(buffer => {
+            const tData = new Uint8Array(buffer);
+            const dataTexture = new DataTexture(
+              tData,
+              data.totalLocations,
+              data.totalDays,
+              RGBAFormat,
+              UnsignedByteType,
+            );
+            setDeathsDataTexture(dataTexture);
+          })
+          .then(() => {
+            textureCount++;
+            if (textureCount >= 2) {
+              setLoadingItems(prevState =>
+                prevState.filter(item => item !== 'Loading DataTextures'),
+              );
+            }
+          });
+        // remove until correct recovered data available...
+        // fetch('data/recoveredTextureData.bin')
+        //   .then(response => response.arrayBuffer())
+        //   .then(buffer => {
+        //     const tData = new Uint8Array(buffer);
+        //     const dataTexture = new DataTexture(
+        //       tData,
+        //       data.totalLocations,
+        //       data.totalDays,
+        //       RGBAFormat,
+        //       UnsignedByteType,
+        //     );
+        //     setRecoveredDataTexture(dataTexture);
+        //   })
+        //   .then(() => {
+        //     textureCount++;
+        //     if (textureCount >= 3) {
+        //       setLoadingItems(prevState =>
+        //         prevState.filter(item => item !== 'Loading DataTextures'),
+        //       );
+        //     }
+        //   });
       });
 
     let textureCount = 0;
@@ -86,7 +137,7 @@ export const App = () => {
       ) : (
         <Visualiser
           data={data}
-          dataTexture={dataTexture}
+          dataTextures={[confirmedDataTexture, deathsDataTexture]}
           spriteTexture={spriteTexture}
           globeTexture={globeTexture}
         />

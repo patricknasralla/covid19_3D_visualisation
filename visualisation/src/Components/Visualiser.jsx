@@ -15,11 +15,12 @@ import { UI } from './UI';
 // three globals (these don't work as state as the render loop is outside react)
 let threeTime = 0;
 let play = false;
-let playbackSpeed = 0.01;
+let playbackSpeed = 0.025;
+let dataFrom = 0;
 
 export const Visualiser = ({
   data,
-  dataTexture,
+  dataTextures,
   spriteTexture,
   globeTexture,
 }) => {
@@ -28,26 +29,32 @@ export const Visualiser = ({
   const [timeValue, setTimeValue] = useState(0);
   const [maxDays, setMaxDays] = useState(1);
   const [pause, setPause] = useState(!play);
+  const [
+    confirmedDataTexture,
+    deathsDataTexture,
+    recoveredDataTexture,
+  ] = dataTextures;
 
   useEffect(() => {
     play = !play;
   }, [pause]);
 
   useEffect(() => {
-    console.log(data);
-    console.log(dataTexture);
     const container = attach.current;
     const [camera] = createCamera(container);
 
     const uniforms = {
       pointTexture: { value: spriteTexture },
-      caseData: { value: dataTexture },
+      confirmedData: { value: confirmedDataTexture },
+      deathsData: { value: deathsDataTexture },
+      // recoveredData: { value: recoveredDataTexture },
       day: { value: 0 },
       totalDays: { value: data.totalDays },
       totalLocations: { value: data.totalLocations },
       tween: { value: 0 },
       pixelRatio: { value: window.devicePixelRatio },
       containerHeight: { value: container.clientHeight },
+      dataFrom: { value: 0 },
     };
 
     const scene = new Scene();
@@ -92,9 +99,19 @@ export const Visualiser = ({
     });
     setMaxDays(data.totalDays);
     setLoading(false);
-  }, [data, spriteTexture, globeTexture]);
+  }, [
+    confirmedDataTexture,
+    deathsDataTexture,
+    recoveredDataTexture,
+    data,
+    spriteTexture,
+    globeTexture,
+  ]);
 
   const render = (totalDays, scene, camera, renderer, uniforms) => {
+    if (uniforms.dataFrom.value !== dataFrom) {
+      uniforms.dataFrom.value = dataFrom;
+    }
     if (threeTime < totalDays) {
       let day = Math.trunc(threeTime);
       uniforms.day.value = day;
@@ -113,6 +130,10 @@ export const Visualiser = ({
     setPause(prevState => !prevState);
   };
 
+  const handleChangeData = value => {
+    dataFrom = value;
+  };
+
   return (
     <>
       <Container ref={attach} />
@@ -121,6 +142,7 @@ export const Visualiser = ({
         startDate={new Date(2020, 0, 21)}
         maxDays={maxDays}
         onChangeTime={(event, newTime) => handleTimeChange(newTime)}
+        onChangeData={value => handleChangeData(value)}
         onPause={handlePlayPause}
         paused={pause}
       />

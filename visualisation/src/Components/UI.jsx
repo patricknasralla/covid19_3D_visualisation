@@ -14,6 +14,7 @@ export const UI = ({
   startDate,
   maxDays,
   onChangeTime,
+  onChangeData,
   onPause,
   paused,
 }) => {
@@ -31,7 +32,18 @@ export const UI = ({
       <Container>
         <Header>
           <Item>
-            Novel Coronavirus COVID-19 (2019-nCoV): Global Cases over time.
+            Novel Coronavirus COVID-19 (2019-nCoV): Global Data Over Time.
+          </Item>
+          <Item>
+            <Select
+              name="DataType"
+              id="DataType"
+              onChange={event => onChangeData(event.target.value)}
+            >
+              <option value={0}>Cases</option>
+              <option value={1}>Deaths</option>
+              {/*<option value={2}>Recovered</option>*/}
+            </Select>
           </Item>
           <Item>
             <Button onClick={handleModalOpen}>
@@ -108,7 +120,7 @@ const Header = styled.div`
   pointer-events: all;
   background: #00000099;
   width: 100%;
-  height: 5%;
+  height: 7.5%;
   font-size: 1.8rem;
   @media (max-width: 960px) {
     font-size: 1.5rem;
@@ -166,4 +178,41 @@ const Button = styled.div`
   height: 2rem;
   margin-right: 2rem;
   cursor: pointer;
+`;
+
+const Select = styled.select`
+  display: block;
+  font-size: 1.8rem;
+  font-family: 'VT323', monospace;
+  color: #dadddf;
+  line-height: 1.3;
+  padding: 0.6rem 0.8rem 0.5rem 0.8rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 6rem;
+  box-sizing: border-box;
+  margin: 0;
+  border-top: 1px solid #dadddf;
+  border-bottom: 1px solid #dadddf;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #00000099;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+  :focus {
+    outline: none;
+  }
+  ::-ms-expand {
+    display: none;
+  }
+  :hover {
+    border-color: #dadddf;
+  }
+  @media (max-width: 960px) {
+    font-size: 1.5rem;
+  }
 `;
