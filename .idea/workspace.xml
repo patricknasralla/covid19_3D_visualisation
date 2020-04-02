@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="" />
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_confirmed_US.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_confirmed_US.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_confirmed_global.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_confirmed_global.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_deaths_US.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_deaths_US.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_deaths_global.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_deaths_global.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_recovered_global.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/rawData/time_series_covid19_recovered_global.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/confirmedTextureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/confirmedTextureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/deathsTextureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/deathsTextureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/staticData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/staticData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Visualiser.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="dev_optimisation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,17 +52,17 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/textures" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/datatool/rawData" />
       <recent name="$PROJECT_DIR$/visualisation/public/data" />
       <recent name="$PROJECT_DIR$/visualisation" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/textures" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Start Visualiser (Dev)">
@@ -294,22 +304,22 @@
     </state>
     <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
     <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585735043327" />
-    <state width="1897" height="313" key="GridCell.Tab.0.bottom" timestamp="1585752964889">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585808736039">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1897" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964889" />
-    <state width="1897" height="313" key="GridCell.Tab.0.center" timestamp="1585752964887">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585808736039" />
+    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585808736038">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1897" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964887" />
-    <state width="1897" height="313" key="GridCell.Tab.0.left" timestamp="1585752964886">
+    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585808736038" />
+    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585808736038">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1897" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964886" />
-    <state width="1897" height="313" key="GridCell.Tab.0.right" timestamp="1585752964888">
+    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585808736038" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585808736039">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1897" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752964888" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585808736039" />
     <state x="548" y="355" key="IDE.errors.dialog" timestamp="1585744776516">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
