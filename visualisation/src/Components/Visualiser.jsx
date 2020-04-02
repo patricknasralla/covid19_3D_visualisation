@@ -15,7 +15,7 @@ import { UI } from './UI';
 // three globals (these don't work as state as the render loop is outside react)
 let threeTime = 0;
 let play = false;
-let playbackSpeed = 0.025;
+let playbackSpeed = 0.015;
 let dataFrom = 0;
 
 export const Visualiser = ({
