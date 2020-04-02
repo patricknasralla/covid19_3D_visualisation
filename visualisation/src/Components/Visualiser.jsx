@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { WebGLRenderer, Scene } from 'three';
+import { WebGLRenderer, Scene, Clock } from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module';
 
 import {
@@ -13,9 +13,10 @@ import { LoadingOverlay, LoadingSpinner } from './Spinner';
 import { UI } from './UI';
 
 // three globals (these don't work as state as the render loop is outside react)
+const clock = new Clock();
 let threeTime = 0;
 let play = false;
-let playbackSpeed = 0.015;
+let playbackSpeed = 1.0;
 let dataFrom = 0;
 
 export const Visualiser = ({
@@ -39,7 +40,7 @@ export const Visualiser = ({
   const [
     confirmedDataTexture,
     deathsDataTexture,
-    recoveredDataTexture,
+    // recoveredDataTexture,
   ] = dataTextures;
 
   useEffect(() => {
@@ -110,12 +111,12 @@ export const Visualiser = ({
       render(totalDays, scene, camera, renderer, uniforms);
       if (process.env.NODE_ENV === 'development') stats.update();
     });
-    setMaxDays(data.totalDays);
+    setMaxDays(totalDays);
     setLoading(false);
   }, [
     confirmedDataTexture,
     deathsDataTexture,
-    recoveredDataTexture,
+    // recoveredDataTexture,
     positionData,
     locationIndexData,
     locationWeightData,
@@ -126,6 +127,7 @@ export const Visualiser = ({
   ]);
 
   const render = (totalDays, scene, camera, renderer, uniforms) => {
+    const delta = clock.getDelta();
     if (uniforms.dataFrom.value !== dataFrom) {
       uniforms.dataFrom.value = dataFrom;
     }
@@ -133,7 +135,7 @@ export const Visualiser = ({
       let day = Math.trunc(threeTime);
       uniforms.day.value = day;
       uniforms.tween.value = threeTime - day;
-      if (play) threeTime += playbackSpeed;
+      if (play) threeTime += playbackSpeed * delta;
       setTimeValue(threeTime);
     }
     renderer.render(scene, camera);

@@ -16,8 +16,9 @@ export const Information = ({ onClickOut }) => {
         <h1>What is this showing me?</h1>
         <p>
           The visualisation displays the (cumulative) number of confirmed
-          Coronavirus cases over time by country/region. Data is taken from the
-          Johns Hopkins combined global dataset which is available here:{' '}
+          Coronavirus cases or deaths over time by country/region. Data is taken
+          from the Johns Hopkins combined global dataset which is available
+          here:{' '}
           <a
             href="https://github.com/CSSEGISandData/COVID-19"
             target={'_blank'}
@@ -26,6 +27,12 @@ export const Information = ({ onClickOut }) => {
             https://github.com/CSSEGISandData/COVID-19
           </a>
           .
+        </p>
+        <p>
+          (Note that US state level data is an aggregated total of the county
+          reporting for each state. This is to avoid exaggeration of numbers
+          that occurs where you get multiple very close locations under each
+          sphere point.)
         </p>
         <p>
           Each point is displaced away from the surface by an amount that takes
@@ -120,7 +127,8 @@ const Overlay = styled.div`
 const ModalContainer = styled.div`
   width: 80%;
   height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 2rem;
   h1 {
     font-size: 3rem;

@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import {
-  DataTexture,
-  RGBAFormat,
-  TextureLoader,
-  UnsignedByteType,
-} from 'three';
+import { TextureLoader } from 'three';
 
 import { darkTheme } from './Theme';
 import { LoadingOverlay, LoadingSpinner } from './Spinner';
@@ -25,7 +20,7 @@ export const App = () => {
   const [positionData, setPositionData] = useState(null);
   const [confirmedDataTexture, setConfirmedDataTexture] = useState(null);
   const [deathsDataTexture, setDeathsDataTexture] = useState(null);
-  const [recoveredDataTexture, setRecoveredDataTexture] = useState(null);
+  // const [recoveredDataTexture, setRecoveredDataTexture] = useState(null);
   const [spriteTexture, setSpriteTexture] = useState(null);
   const [globeTexture, setGlobeTexture] = useState(null);
 
@@ -37,7 +32,7 @@ export const App = () => {
       .then(response => response.arrayBuffer())
       .then(buffer => {
         const recoveredBuffer = inflate(buffer);
-        const data = new Uint16Array(recoveredBuffer.buffer);
+        const data = new Uint32Array(recoveredBuffer.buffer);
         setPositionData(data);
       })
       .then(() => {
@@ -98,14 +93,7 @@ export const App = () => {
     fetch('data/deathsTextureData.bin')
       .then(response => response.arrayBuffer())
       .then(buffer => {
-        const tData = new Uint8Array(buffer);
-        const dataTexture = new DataTexture(
-          tData,
-          staticData.totalLocations,
-          staticData.totalDays,
-          RGBAFormat,
-          UnsignedByteType,
-        );
+        const dataTexture = DataParser.getTextureFromFile(buffer, staticData);
         setDeathsDataTexture(dataTexture);
       })
       .then(() => {

@@ -128,7 +128,7 @@ export class DataUtils {
     console.log(`Total weights calculated: ${locationWeights.length}`);
 
     return [
-      new Uint16Array(positions),
+      new Uint32Array(positions),
       new Uint16Array(locationIndices),
       new Float32Array(locationWeights)
     ];

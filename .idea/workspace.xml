@@ -2,20 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/visualisation/public/data/locationIndexData.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/visualisation/public/data/locationWeightData.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/visualisation/public/data/positionData.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/visualisation/src/staticData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/src/Utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testCompressedFile.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testCompressedIndices.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testCompressedPositions.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testCompressedWeights.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testFile.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testIndices.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testPositions.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testPositionsFile.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datatool/tests/testWeights.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datatool/ParseCaseData.js" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/ParseCaseData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datatool/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/experiments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datatool/src/DataUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/datatool/src/DataUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visualisation/public/data/confirmedTextureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/confirmedTextureData.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualisation/public/data/staticData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/staticData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/deathsTextureData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/deathsTextureData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/locationIndexData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/locationIndexData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/locationWeightData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/locationWeightData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/positionData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/public/data/positionData.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/recoveredTextureData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/public/data/staticData.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/Information.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Information.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/UI.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/UI.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visualisation/src/Components/Visualiser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Visualiser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualisation/src/three/visualiser.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/three/visualiser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualisation/src/utilities/DataParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/utilities/DataParser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/staticData.json" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/staticData.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,17 +69,17 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/textures" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/visualisation/src" />
       <recent name="$PROJECT_DIR$/datatool/rawData" />
       <recent name="$PROJECT_DIR$/visualisation/public/data" />
       <recent name="$PROJECT_DIR$/visualisation" />
       <recent name="$PROJECT_DIR$/public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/textures" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Start Visualiser (Dev)">
@@ -317,27 +329,27 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585232664701" />
-    <state x="499" y="123" key="CommitChangelistDialog2" timestamp="1585753158093">
+    <state x="277" y="123" key="CommitChangelistDialog2" timestamp="1585826559918">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="499" y="123" key="CommitChangelistDialog2/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585168809643" />
-    <state x="499" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585753158093" />
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585765504370">
+    <state x="277" y="123" key="CommitChangelistDialog2/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585826559918" />
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom" timestamp="1585826561198">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585765504370" />
-    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585765504370">
+    <state width="1899" height="313" key="GridCell.Tab.0.bottom/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585826561198" />
+    <state width="1899" height="313" key="GridCell.Tab.0.center" timestamp="1585826561197">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585765504370" />
-    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585765504369">
+    <state width="1899" height="313" key="GridCell.Tab.0.center/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585826561197" />
+    <state width="1899" height="313" key="GridCell.Tab.0.left" timestamp="1585826561196">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585765504369" />
-    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585765504370">
+    <state width="1899" height="313" key="GridCell.Tab.0.left/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585826561196" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right" timestamp="1585826561198">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585765504370" />
+    <state width="1899" height="313" key="GridCell.Tab.0.right/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585826561198" />
     <state x="548" y="355" key="IDE.errors.dialog" timestamp="1585744776516">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>

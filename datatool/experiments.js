@@ -1,11 +1,13 @@
 import fs from "fs";
-import { deflate, inflate } from "pako";
+import { inflate } from "pako";
 import {
   parseCSV,
   createPlaceholderData,
   createStateDataObject,
   aggregateUSDataToState
 } from "./src/CSVUtils";
+import { DataUtils } from "./src/DataUtils";
+import { compareArrays, compressForFile } from "./src/Utils";
 
 async function exportDataForApplication() {
   // read csv US data and aggregate to state data test
@@ -15,25 +17,117 @@ async function exportDataForApplication() {
   console.log(aggregateUSDataToState(confirmedUSRaw));
 }
 
-function compressionTest() {
-  const testData = new Float32Array([12.3, 123456789.5, 123.456, -123.456]);
-  console.log(testData);
-  const compressedTestData = deflate(testData.buffer);
-  console.log(compressedTestData.byteLength);
-  const recoveredBuffer = inflate(compressedTestData);
-  const recoveredData = new Float32Array(recoveredBuffer.buffer);
-  console.log(recoveredData);
+async function compressionTest() {
+  // get some real data into the system
+  const confirmedGlobalRaw = await parseCSV(
+    "./rawData/time_series_covid19_confirmed_global.csv"
+  );
+  const confirmedUSRaw = aggregateUSDataToState(
+    await parseCSV("./rawData/time_series_covid19_confirmed_US.csv")
+  );
+  const confirmedRaw = confirmedGlobalRaw.concat(confirmedUSRaw);
 
-  fs.writeFile("./testFile.bin", compressedTestData, err => {
+  // do the calculations
+  const locationPositions = DataUtils.getPositionVectorsFromData(confirmedRaw);
+  const [positions, locationIndices, locationWeights] = DataUtils.getVertexData(
+    locationPositions
+  );
+
+  const [
+    confirmedTextureData,
+    totalDays,
+    totalLocations
+  ] = DataUtils.parseDataToTextureData(confirmedRaw);
+
+  // test decompressed position data vs current
+  const compressedPositions = compressForFile(positions); // Uint16
+  const compressedIndices = compressForFile(locationIndices); // Uint16
+  const compressedWeights = compressForFile(locationWeights); // Float32
+
+  /*
+  await fs.writeFile(
+    "./tests/testCompressedPositions.bin",
+    compressedPositions,
+    err => {
+      if (err) throw err;
+      console.log("Compressed positions successfully written!");
+    }
+  );
+  // save the uncompressed file for comparison
+  fs.writeFile("./tests/testPositions.bin", positions, err => {
     if (err) throw err;
-    console.log("Static weights data successfully parsed!");
+    console.log("Uncompressed positions successfully written!");
   });
 
-  fs.readFile("./testFile.bin", (err, data) => {
+  await fs.writeFile(
+    "./tests/testCompressedIndices.bin",
+    compressedIndices,
+    err => {
+      if (err) throw err;
+      console.log("Compressed indices successfully written!");
+    }
+  );
+
+  // save the uncompressed file for comparison
+  fs.writeFile("./tests/testIndices.bin", locationIndices, err => {
     if (err) throw err;
+    console.log("Uncompressed indices successfully written!");
+  });
+
+  await fs.writeFile(
+    "./tests/testCompressedWeights.bin",
+    compressedWeights,
+    err => {
+      if (err) throw err;
+      console.log("Compressed weights successfully written!");
+    }
+  );
+
+  // save the uncompressed file for comparison
+  fs.writeFile("./tests/testWeights.bin", locationWeights, err => {
+    if (err) throw err;
+    console.log("Uncompressed weights successfully written!");
+  });
+
+  */
+
+  fs.readFile("./tests/testCompressedPositions.bin", (err, data) => {
+    if (err) throw err;
+
     const recoveredBuffer = inflate(data);
-    const dataFromFile = new Float32Array(recoveredBuffer.buffer);
-    console.log(dataFromFile);
+    const recovered = new Uint16Array(recoveredBuffer.buffer);
+    console.log(
+      `compressedPositions successfully recovered: ${compareArrays(
+        recovered,
+        positions
+      )}`
+    );
+  });
+
+  fs.readFile("./tests/testCompressedIndices.bin", (err, data) => {
+    if (err) throw err;
+
+    const recoveredBuffer = inflate(data);
+    const recovered = new Uint16Array(recoveredBuffer.buffer);
+    console.log(
+      `compressedIndices successfully recovered: ${compareArrays(
+        recovered,
+        locationIndices
+      )}`
+    );
+  });
+
+  fs.readFile("./tests/testCompressedWeights.bin", (err, data) => {
+    if (err) throw err;
+
+    const recoveredBuffer = inflate(data);
+    const recovered = new Float32Array(recoveredBuffer.buffer);
+    console.log(
+      `compressedWeights successfully recovered: ${compareArrays(
+        recovered,
+        locationWeights
+      )}`
+    );
   });
 }
 
