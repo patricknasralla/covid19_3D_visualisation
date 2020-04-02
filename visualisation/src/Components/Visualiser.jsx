@@ -16,7 +16,7 @@ import { UI } from './UI';
 const clock = new Clock();
 let threeTime = 0;
 let play = false;
-let playbackSpeed = 1.0;
+let playbackSpeed = 1.5;
 let dataFrom = 0;
 
 export const Visualiser = ({
