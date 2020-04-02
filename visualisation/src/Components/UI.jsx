@@ -24,16 +24,13 @@ export const UI = ({
 
   const handleModalOpen = () => {
     setModalOpen(prevState => !prevState);
-    console.log(modalOpen);
   };
 
   return (
     <>
       <Container>
         <Header>
-          <Item>
-            Novel Coronavirus COVID-19 (2019-nCoV): Global Data Over Time.
-          </Item>
+          <Item>2019-nCoV: Global Data Over Time.</Item>
           <Item>
             <Select
               name="DataType"
@@ -53,7 +50,13 @@ export const UI = ({
         </Header>
         <Spacer />
         <MainContainer>
-          <DateText>{currentDay.toLocaleString()}</DateText>
+          <DateText>
+            {currentDay.toLocaleString(undefined, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </DateText>
           <Controls>
             <Button onClick={onPause}>
               {!paused ? <PlayIcon /> : <PauseIcon />}

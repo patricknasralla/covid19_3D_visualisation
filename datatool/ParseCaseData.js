@@ -3,25 +3,29 @@ import { deflate } from "pako";
 import {
   parseCSV,
   removeUSCountryValues,
-  createPlaceholderData,
   aggregateUSDataToState
 } from "./src/CSVUtils";
 import { DataUtils } from "./src/DataUtils";
+import { compressForFile } from "./src/Utils";
 
 async function exportDataForApplication() {
   // read csv files and concat Global and US data (always do it in that order so that indices are correct for non-us sets)
   const confirmedGlobalRaw = await parseCSV(
-    "./rawData/time_series_covid19_confirmed_global.csv"
+    "/Users/patricknasralla/WebstormProjects/COVID-19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
   );
   const confirmedUSRaw = aggregateUSDataToState(
-    await parseCSV("./rawData/time_series_covid19_confirmed_US.csv")
+    await parseCSV(
+      "/Users/patricknasralla/WebstormProjects/COVID-19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv"
+    )
   );
   const confirmedRaw = confirmedGlobalRaw.concat(confirmedUSRaw);
   const deathsGlobalRaw = await parseCSV(
-    "./rawData/time_series_covid19_deaths_global.csv"
+    "/Users/patricknasralla/WebstormProjects/COVID-19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
   );
   const deathsUSRaw = aggregateUSDataToState(
-    await parseCSV("./rawData/time_series_covid19_deaths_US.csv")
+    await parseCSV(
+      "/Users/patricknasralla/WebstormProjects/COVID-19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
+    )
   );
   const deathsRaw = deathsGlobalRaw.concat(deathsUSRaw);
 
@@ -59,38 +63,64 @@ async function exportDataForApplication() {
 
   const staticData = {
     totalDays,
-    totalLocations,
-    positions,
-    locationIndices,
-    locationWeights
+    totalLocations
   };
-  const staticOutput = deflate(JSON.stringify(staticData), { to: "string" });
+  const staticOutput = JSON.stringify(staticData);
+
+  const compressedPositions = compressForFile(positions); // Uint16
+  const compressedIndices = compressForFile(locationIndices); // Uint32
+  const compressedWeights = compressForFile(locationWeights); // Float32
 
   // output compressed static data to file
+  fs.writeFile("../visualisation/src/staticData.json", staticOutput, err => {
+    if (err) throw err;
+    console.log("Static data successfully saved!");
+  });
+
   fs.writeFile(
-    "../visualisation/public/data/staticData.bin",
-    staticOutput,
+    "../visualisation/public/data/positionData.bin",
+    compressedPositions,
     err => {
       if (err) throw err;
-      console.log("Static data successfully parsed!");
+      console.log("Static position data successfully saved!");
+    }
+  );
+
+  fs.writeFile(
+    "../visualisation/public/data/locationIndexData.bin",
+    compressedIndices,
+    err => {
+      if (err) throw err;
+      console.log("Static index data successfully saved!");
+    }
+  );
+
+  fs.writeFile(
+    "../visualisation/public/data/locationWeightData.bin",
+    compressedWeights,
+    err => {
+      if (err) throw err;
+      console.log("Static weights data successfully saved!");
     }
   );
 
   // output texture data
+  const confirmedTextureDataCompressed = deflate(confirmedTextureData);
   fs.writeFile(
     "../visualisation/public/data/confirmedTextureData.bin",
-    confirmedTextureData,
+    confirmedTextureDataCompressed,
     err => {
       if (err) throw err;
-      console.log("Confirmed cases texture data successfully parsed!");
+      console.log("Confirmed cases texture data successfully saved!");
     }
   );
+  const deathsTextureDataCompressed = deflate(deathsTextureData);
   fs.writeFile(
     "../visualisation/public/data/deathsTextureData.bin",
-    deathsTextureData,
+    deathsTextureDataCompressed,
     err => {
       if (err) throw err;
-      console.log("Deaths texture data successfully parsed!");
+      console.log("Deaths texture data successfully saved!");
     }
   );
   // Todo: Add recovered data when available

@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { DataParser } from '../utilities/DataParser';
 import { vertexShader } from './vertexShader';
 import { fragmentShader } from './fragmentShader';
 
@@ -23,46 +22,49 @@ export function createCamera(container) {
   return [camera, controls];
 }
 
-export function parseData(data) {
-  const locations = DataParser.getPositionVectorsFromData(data);
-  const [
-    caseData,
-    totalDays,
-    totalLocations,
-  ] = DataParser.getConfirmedCasesAsTextureData(data);
-  return [locations, caseData, totalDays, totalLocations];
-}
-
-export function createParticleMesh(scene, data, uniforms) {
+export function createParticleMesh(
+  scene,
+  positionData,
+  locationIndices,
+  locationWeights,
+  uniforms,
+) {
+  const placementGeometry = new THREE.IcosahedronGeometry(1, 7);
   const geometry = new THREE.BufferGeometry();
 
+  const positions = [];
   const colors = [];
   const sizes = [];
 
   const color = new THREE.Color();
+  color.setHSL(0.0, 0.0, 0.5);
 
-  // calculations per vertex in pointSphere
-  for (let i = 0; i < data.positions.length; i++) {
+  positionData.forEach(indexValue => {
+    positions.push(
+      placementGeometry.vertices[indexValue].x,
+      placementGeometry.vertices[indexValue].y,
+      placementGeometry.vertices[indexValue].z,
+    );
     // set base colour to 50% grey (for additive shader)
-    color.setHSL(0.0, 0.0, 0.5);
     colors.push(color.r, color.g, color.b);
     // set size to 1 (likely pointless... but I may want to change things later so...)
     sizes.push(1);
-  }
+  });
+  // calculations per vertex in pointSphere
 
   geometry.setAttribute(
     'position',
-    new THREE.Float32BufferAttribute(data.positions, 3),
+    new THREE.Float32BufferAttribute(positions, 3),
   );
   geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
   geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
   geometry.setAttribute(
     'locationIndices',
-    new THREE.Float32BufferAttribute(data.locationIndices, 4),
+    new THREE.Float32BufferAttribute(locationIndices, 4),
   );
   geometry.setAttribute(
     'locationWeights',
-    new THREE.Float32BufferAttribute(data.locationWeights, 4),
+    new THREE.Float32BufferAttribute(locationWeights, 4),
   );
 
   const material = new THREE.ShaderMaterial({

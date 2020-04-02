@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { WebGLRenderer, Scene } from 'three';
+import { WebGLRenderer, Scene, Clock } from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module';
 
 import {
@@ -13,9 +13,10 @@ import { LoadingOverlay, LoadingSpinner } from './Spinner';
 import { UI } from './UI';
 
 // three globals (these don't work as state as the render loop is outside react)
+const clock = new Clock();
 let threeTime = 0;
 let play = false;
-let playbackSpeed = 0.015;
+let playbackSpeed = 1.0;
 let dataFrom = 0;
 
 export const Visualiser = ({
@@ -30,9 +31,16 @@ export const Visualiser = ({
   const [maxDays, setMaxDays] = useState(1);
   const [pause, setPause] = useState(!play);
   const [
+    positionData,
+    locationIndexData,
+    locationWeightData,
+    totalLocations,
+    totalDays,
+  ] = data;
+  const [
     confirmedDataTexture,
     deathsDataTexture,
-    recoveredDataTexture,
+    // recoveredDataTexture,
   ] = dataTextures;
 
   useEffect(() => {
@@ -49,8 +57,8 @@ export const Visualiser = ({
       deathsData: { value: deathsDataTexture },
       // recoveredData: { value: recoveredDataTexture },
       day: { value: 0 },
-      totalDays: { value: data.totalDays },
-      totalLocations: { value: data.totalLocations },
+      totalDays: { value: totalDays },
+      totalLocations: { value: totalLocations },
       tween: { value: 0 },
       pixelRatio: { value: window.devicePixelRatio },
       containerHeight: { value: container.clientHeight },
@@ -63,7 +71,13 @@ export const Visualiser = ({
 
     createLights(scene);
     createGlobeMesh(scene, spriteTexture, globeTexture);
-    createParticleMesh(scene, data, uniforms);
+    createParticleMesh(
+      scene,
+      positionData,
+      locationIndexData,
+      locationWeightData,
+      uniforms,
+    );
 
     const renderer = new WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -94,21 +108,26 @@ export const Visualiser = ({
     window.addEventListener('resize', onWindowResize, false);
 
     renderer.setAnimationLoop(() => {
-      render(data.totalDays, scene, camera, renderer, uniforms);
+      render(totalDays, scene, camera, renderer, uniforms);
       if (process.env.NODE_ENV === 'development') stats.update();
     });
-    setMaxDays(data.totalDays);
+    setMaxDays(totalDays);
     setLoading(false);
   }, [
     confirmedDataTexture,
     deathsDataTexture,
-    recoveredDataTexture,
-    data,
+    // recoveredDataTexture,
+    positionData,
+    locationIndexData,
+    locationWeightData,
+    totalDays,
+    totalLocations,
     spriteTexture,
     globeTexture,
   ]);
 
   const render = (totalDays, scene, camera, renderer, uniforms) => {
+    const delta = clock.getDelta();
     if (uniforms.dataFrom.value !== dataFrom) {
       uniforms.dataFrom.value = dataFrom;
     }
@@ -116,7 +135,7 @@ export const Visualiser = ({
       let day = Math.trunc(threeTime);
       uniforms.day.value = day;
       uniforms.tween.value = threeTime - day;
-      if (play) threeTime += playbackSpeed;
+      if (play) threeTime += playbackSpeed * delta;
       setTimeValue(threeTime);
     }
     renderer.render(scene, camera);
