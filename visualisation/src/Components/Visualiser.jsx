@@ -15,7 +15,7 @@ import { UI } from './UI';
 // three globals (these don't work as state as the render loop is outside react)
 let threeTime = 0;
 let play = false;
-let playbackSpeed = 0.025;
+let playbackSpeed = 0.015;
 let dataFrom = 0;
 
 export const Visualiser = ({
@@ -29,6 +29,13 @@ export const Visualiser = ({
   const [timeValue, setTimeValue] = useState(0);
   const [maxDays, setMaxDays] = useState(1);
   const [pause, setPause] = useState(!play);
+  const [
+    positionData,
+    locationIndexData,
+    locationWeightData,
+    totalLocations,
+    totalDays,
+  ] = data;
   const [
     confirmedDataTexture,
     deathsDataTexture,
@@ -49,8 +56,8 @@ export const Visualiser = ({
       deathsData: { value: deathsDataTexture },
       // recoveredData: { value: recoveredDataTexture },
       day: { value: 0 },
-      totalDays: { value: data.totalDays },
-      totalLocations: { value: data.totalLocations },
+      totalDays: { value: totalDays },
+      totalLocations: { value: totalLocations },
       tween: { value: 0 },
       pixelRatio: { value: window.devicePixelRatio },
       containerHeight: { value: container.clientHeight },
@@ -63,7 +70,13 @@ export const Visualiser = ({
 
     createLights(scene);
     createGlobeMesh(scene, spriteTexture, globeTexture);
-    createParticleMesh(scene, data, uniforms);
+    createParticleMesh(
+      scene,
+      positionData,
+      locationIndexData,
+      locationWeightData,
+      uniforms,
+    );
 
     const renderer = new WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -94,7 +107,7 @@ export const Visualiser = ({
     window.addEventListener('resize', onWindowResize, false);
 
     renderer.setAnimationLoop(() => {
-      render(data.totalDays, scene, camera, renderer, uniforms);
+      render(totalDays, scene, camera, renderer, uniforms);
       if (process.env.NODE_ENV === 'development') stats.update();
     });
     setMaxDays(data.totalDays);
@@ -103,7 +116,11 @@ export const Visualiser = ({
     confirmedDataTexture,
     deathsDataTexture,
     recoveredDataTexture,
-    data,
+    positionData,
+    locationIndexData,
+    locationWeightData,
+    totalDays,
+    totalLocations,
     spriteTexture,
     globeTexture,
   ]);

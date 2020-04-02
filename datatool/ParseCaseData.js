@@ -59,27 +59,52 @@ async function exportDataForApplication() {
 
   const staticData = {
     totalDays,
-    totalLocations,
-    positions,
-    locationIndices,
-    locationWeights
+    totalLocations
   };
-  const staticOutput = deflate(JSON.stringify(staticData), { to: "string" });
+  const staticOutput = JSON.stringify(staticData);
 
   // output compressed static data to file
+  fs.writeFile("../visualisation/src/staticData.json", staticOutput, err => {
+    if (err) throw err;
+    console.log("Static data successfully parsed!");
+  });
+
+  // output other static data to files to see raw size...
+  const positionsCompressed = deflate(positions);
   fs.writeFile(
-    "../visualisation/public/data/staticData.bin",
-    staticOutput,
+    "../visualisation/public/data/positionData.bin",
+    positionsCompressed,
     err => {
       if (err) throw err;
-      console.log("Static data successfully parsed!");
+      console.log("Static position data successfully parsed!");
+    }
+  );
+
+  const locationIndicesCompressed = deflate(locationIndices);
+  fs.writeFile(
+    "../visualisation/public/data/locationIndexData.bin",
+    locationIndicesCompressed,
+    err => {
+      if (err) throw err;
+      console.log("Static index data successfully parsed!");
+    }
+  );
+
+  const locationWeightsCompressed = deflate(locationWeights);
+  fs.writeFile(
+    "../visualisation/public/data/locationWeightData.bin",
+    locationWeightsCompressed,
+    err => {
+      if (err) throw err;
+      console.log("Static weights data successfully parsed!");
     }
   );
 
   // output texture data
+  const confirmedTextureDataCompressed = deflate(confirmedTextureData);
   fs.writeFile(
     "../visualisation/public/data/confirmedTextureData.bin",
-    confirmedTextureData,
+    confirmedTextureDataCompressed,
     err => {
       if (err) throw err;
       console.log("Confirmed cases texture data successfully parsed!");

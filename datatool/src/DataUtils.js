@@ -83,11 +83,7 @@ export class DataUtils {
       );
 
       if (!!positionWeights) {
-        positions.push(
-          placementGeometry.vertices[i].x,
-          placementGeometry.vertices[i].y,
-          placementGeometry.vertices[i].z
-        );
+        positions.push(i);
         positionWeights.forEach(position => {
           locationIndices.push(position.index);
           locationWeights.push(position.weight);
@@ -128,9 +124,13 @@ export class DataUtils {
     }
 
     console.log(`Total vertices: ${placementGeometry.vertices.length}`);
-    console.log(`Total vertices after culling: ${positions.length / 3}`);
+    console.log(`Total vertices after culling: ${positions.length}`);
     console.log(`Total weights calculated: ${locationWeights.length}`);
 
-    return [positions, locationIndices, locationWeights];
+    return [
+      new Uint16Array(positions),
+      new Uint16Array(locationIndices),
+      new Float32Array(locationWeights)
+    ];
   }
 }

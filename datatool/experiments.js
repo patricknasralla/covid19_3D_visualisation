@@ -1,4 +1,5 @@
 import fs from "fs";
+import { deflate, inflate } from "pako";
 import {
   parseCSV,
   createPlaceholderData,
@@ -14,4 +15,26 @@ async function exportDataForApplication() {
   console.log(aggregateUSDataToState(confirmedUSRaw));
 }
 
-exportDataForApplication();
+function compressionTest() {
+  const testData = new Float32Array([12.3, 123456789.5, 123.456, -123.456]);
+  console.log(testData);
+  const compressedTestData = deflate(testData.buffer);
+  console.log(compressedTestData.byteLength);
+  const recoveredBuffer = inflate(compressedTestData);
+  const recoveredData = new Float32Array(recoveredBuffer.buffer);
+  console.log(recoveredData);
+
+  fs.writeFile("./testFile.bin", compressedTestData, err => {
+    if (err) throw err;
+    console.log("Static weights data successfully parsed!");
+  });
+
+  fs.readFile("./testFile.bin", (err, data) => {
+    if (err) throw err;
+    const recoveredBuffer = inflate(data);
+    const dataFromFile = new Float32Array(recoveredBuffer.buffer);
+    console.log(dataFromFile);
+  });
+}
+
+compressionTest();
