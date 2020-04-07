@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="" />
+    <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/Theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/Theme.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,6 +118,7 @@
       <workItem from="1585728159720" duration="20936000" />
       <workItem from="1585755807331" duration="7772000" />
       <workItem from="1585841246010" duration="8000" />
+      <workItem from="1586171587194" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
