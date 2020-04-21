@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="Add .gitignore to datatool">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,6 +143,8 @@
       <workItem from="1587138765445" duration="75000" />
       <workItem from="1587138870921" duration="305000" />
       <workItem from="1587139280131" duration="214000" />
+      <workItem from="1587139514639" duration="3728000" />
+      <workItem from="1587379262520" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -385,9 +386,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="646" y="397" key="git4idea.merge.GitMergeDialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585752744211" />
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup" timestamp="1585757443318">
-      <screen x="0" y="23" width="1920" height="1177" />
+    <state x="625" y="244" width="670" height="690" key="search.everywhere.popup" timestamp="1587376432253">
+      <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585757443318" />
+    <state x="625" y="244" width="670" height="690" key="search.everywhere.popup/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1587376432253" />
+    <state x="625" y="262" width="670" height="676" key="search.everywhere.popup/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1587376429631" />
   </component>
 </project>
