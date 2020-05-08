@@ -20,7 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3695dfa-a9c1-47f2-b1df-9e33ef675c7d" name="Default Changelist" comment="Add .gitignore to datatool">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_35_[Default_Changelist]/confirmedTextureData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_35_[Default_Changelist]/deathsTextureData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_35_[Default_Changelist]/locationIndexData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_35_[Default_Changelist]/locationWeightData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_35_[Default_Changelist]/positionData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_35_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_36_[Default_Changelist]/confirmedTextureData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_36_[Default_Changelist]/deathsTextureData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_36_[Default_Changelist]/locationIndexData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_36_[Default_Changelist]/locationWeightData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_36_[Default_Changelist]/positionData.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_36_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020,_12_39_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020__12_35__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020__12_36__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_04_2020__12_39__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/visualisation/src/Components/App.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +75,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -145,6 +162,8 @@
       <workItem from="1587139280131" duration="214000" />
       <workItem from="1587139514639" duration="3728000" />
       <workItem from="1587379262520" duration="31000" />
+      <workItem from="1588667746848" duration="1039000" />
+      <workItem from="1588773230095" duration="454000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
@@ -356,10 +375,11 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="548" y="355" key="IDE.errors.dialog/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585744776516" />
-    <state x="461" y="250" key="SettingsEditor" timestamp="1585316480552">
-      <screen x="0" y="23" width="1920" height="1177" />
+    <state x="461" y="231" width="997" height="802" key="SettingsEditor" timestamp="1588784139665">
+      <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="461" y="250" key="SettingsEditor/-2560.-217.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585166838071" />
+    <state x="461" y="231" width="997" height="802" key="SettingsEditor/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1588784139665" />
     <state x="461" y="250" key="SettingsEditor/1920.199.1366.1001/-2560.-502.2560.1417/0.23.1920.1177@0.23.1920.1177" timestamp="1585316480552" />
     <state x="560" y="347" key="Vcs.Push.Dialog.v2" timestamp="1585826677988">
       <screen x="0" y="23" width="1920" height="1177" />
