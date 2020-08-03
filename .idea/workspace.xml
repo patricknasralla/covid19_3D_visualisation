@@ -47,6 +47,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.3.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.53" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/textures" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -146,6 +147,7 @@
       <workItem from="1588667746848" duration="1039000" />
       <workItem from="1588773230095" duration="454000" />
       <workItem from="1591267232033" duration="365000" />
+      <workItem from="1596052416057" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit. Working react/three.js integration.">
       <created>1584881123079</created>
