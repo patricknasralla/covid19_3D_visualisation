@@ -19,7 +19,7 @@
   "dependencies": {
     "csv-parser": "^2.3.2",
     "pako": "^1.0.11",
-    "three": "^0.115.0",
+    "three": "^0.125.0",
     "neat-csv": "^5.2.0"
   },
   "devDependencies": {
